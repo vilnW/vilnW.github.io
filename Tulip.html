@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+<head>
+<meta charset='UTF-8'>
+<meta name="robots" content="noindex">
+<link href='https://fonts.googleapis.com/css?family=Audiowide|Iceland|Monoton|Pacifico|Press+Start+2P|Vampiro+One' rel='stylesheet' type='text/css'>
+<style class="cp-pen-styles">
+
+html, body {
+  margin: 0;
+  background: #E0FAE0;
+  overflow: hidden;
+}
+
+.gele {
+  position: relative/*absolute*/;
+  /*top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;*/
+  margin: 50px 150px;
+  width: 300px;
+  height: 300px;
+  border: 0px solid green;
+  border-radius: 50%;
+  transform: scale(1.1);
+}
+
+.purple {position: absolute;
+  top: 290px;
+  left: 300px;}
+
+.gele .whorl {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: #B4B458;
+  background-size: 8px 8px;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  box-shadow: 0px 0px 40px gold;
+  z-index: 10;
+}
+.gele .flower:nth-child(1),
+.gele .flower:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  transition: 500ms;
+  z-index: 9;
+}
+.gele .flower:nth-child(2) {  z-index: 8;}
+
+.gele .flower:nth-child(1) .petal,
+.gele .flower:nth-child(2) .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  border-radius: 120% 0% 120% 30%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(0% 100%, circle cover, #FFD700, #bb0000, #bb0000, #FFD700);
+  background: -moz-radial-gradient(0% 100%, circle cover, #FFD700, #bb0000, #bb0000, #FFD700);
+  background: -o-radial-gradient(0% 100%, circle cover, #FFD700, #bb0000, #bb0000, #FFD700);
+  background: -ms-radial-gradient(0% 100%, circle cover, #FFD700, #bb0000, #bb0000, #FFD700);
+  background: -webkit-radial-gradient(0% 100%, circle cover, #FFD700, #bb0000, #bb0000, #FFD700);
+  box-shadow: 0px 0px 5px #000;
+  border-top: 1px solid #FFD700;
+  border-right: 1px solid #FFD700;
+  transform-style: preserve-3d;
+}
+
+
+.white .flower:nth-child(1) .petal,
+.white .flower:nth-child(2) .petal {
+  background: radial-gradient(0% 100%, circle cover, #F7D624, #fff, #fff, #E8CED3);
+  background: -moz-radial-gradient(0% 100%, circle cover, #F7D624, #fff, #fff, #E8CED3);
+  background: -o-radial-gradient(0% 100%, circle cover, #F7D624, #fff, #fff, #E8CED3);
+  background: -ms-radial-gradient(0% 100%, circle cover, #F7D624, #fff, #fff, #E8CED3);
+  background: -webkit-radial-gradient(0% 100%, circle cover, #F7D624, #fff, #fff, #E8CED3);
+  box-shadow: 0px 0px 2px #000;
+  border-top: 0.5px solid #fff;
+  border-right: 0.5px solid #fff;
+}
+.purple .flower:nth-child(1) .petal,
+.purple .flower:nth-child(2) .petal {
+  background: radial-gradient(0% 100%, circle cover, #FFE8F5, #E524C4, #E524C4, #E8CED3);
+  background: -moz-radial-gradient(0% 100%, circle cover, #FFE8F5, #E524C4, #E524C4, #E8CED3);
+  background: -o-radial-gradient(0% 100%, circle cover, #FFE8F5, #E524C4, #E524C4, #E8CED3);
+  background: -ms-radial-gradient(0% 100%, circle cover, #FFE8F5, #E524C4, #E524C4, #E8CED3);
+  background: -webkit-radial-gradient(0% 100%, circle cover, #FFE8F5, #E524C4, #E524C4, #E8CED3);
+  box-shadow: 0px 0px 2px #000;
+  border-top: 0.5px solid #fff;
+  border-right: 0.5px solid #fff;
+}
+
+.gele .flower:nth-child(3)  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 11;
+    transform: rotate(0deg);
+    transition: 500ms;
+    z-index: 10;
+}
+
+.gele .flower:nth-child(1) .petal:nth-child(1):after,
+.gele .flower:nth-child(1) .petal:nth-child(2):after,
+.gele .flower:nth-child(1) .petal:nth-child(3):after,
+.gele .flower:nth-child(2) .petal:nth-child(1):after,
+.gele .flower:nth-child(2) .petal:nth-child(2):after,
+.gele .flower:nth-child(2) .petal:nth-child(3):after  {
+  position: absolute;
+  content: "";
+  top: 250%;
+  left: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background: gold;
+  box-shadow: 0 0 20px yellow;
+  opacity: 0;
+}
+
+.gele .flower:nth-child(3) .petal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 800px 50% 800px 0%;
+    width: 23px;
+    height: 23px;
+    background: #512830;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    z-index: 10;
+}
+
+.gele .flower:nth-child(4) .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 150% 50% 150% 0%;
+  width: 20px;
+  height: 20px;
+  background: #F7D162;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+    z-index: 11;
+}
+
+.gele .flower:nth-child(1) .petal:nth-child(1) {  transform: rotate(60deg)  translate(80px) rotate(45deg);}
+.gele .flower:nth-child(1) .petal:nth-child(2) {  transform: rotate(180deg) translate(80px) rotate(45deg);}
+.gele .flower:nth-child(1) .petal:nth-child(3) {  transform: rotate(300deg) translate(80px) rotate(45deg);}
+
+.gele .flower:nth-child(2) .petal:nth-child(1) {  transform: rotate(0deg)   translate(80px) rotate(45deg);}
+.gele .flower:nth-child(2) .petal:nth-child(2) {  transform: rotate(120deg) translate(80px) rotate(45deg);}
+.gele .flower:nth-child(2) .petal:nth-child(3) {  transform: rotate(240deg) translate(80px) rotate(45deg);}
+
+.gele .flower:nth-child(3) .petal:nth-child(1) {  transform: rotate(60deg)  translate(50px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(2) {  transform: rotate(180deg) translate(50px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(3) {  transform: rotate(300deg) translate(50px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(4) {  transform: rotate(0deg)   translate(50px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(5) {  transform: rotate(120deg) translate(50px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(6) {  transform: rotate(240deg) translate(50px) rotate(45deg);}
+
+.gele .flower:nth-child(4) .petal:nth-child(1) {  transform: rotate(60deg)  translate(15px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(2) {  transform: rotate(180deg) translate(15px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(3) {  transform: rotate(300deg) translate(15px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(4) {  transform: rotate(0deg)   translate(15px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(5) {  transform: rotate(120deg) translate(15px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(6) {  transform: rotate(240deg) translate(15px) rotate(45deg);}
+
+.gele:hover .flower:nth-child(1) {
+  transform: scale(1.05);
+}
+.gele:hover .flower:nth-child(2) {
+  transform: scale(1.05);
+}
+h1.tulpe {
+  font-size: 5em;
+  margin: 20px 0 20px 80px;
+}
+
+h1.tulpe a {
+  color: #CE24AF;
+  font-family: Pacifico, Vampiro One;
+}
+
+h1.tulpe a:hover {
+  -webkit-animation: neon 1.5s ease-in-out infinite alternate;
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+h1.tulpe a:hover {
+  color: #EDCEFA;
+}
+@-webkit-keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+
+</style>
+</head>
+<body>
+<h1 class="tulpe"><a nohref>Su tulpių diena!</a></h1>
+
+<div class="gele"> 
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="gele white"> 
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="gele purple"> 
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+</body>
+</html>
