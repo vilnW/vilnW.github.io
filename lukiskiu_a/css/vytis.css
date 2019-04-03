@@ -1,0 +1,630 @@
+body {
+display: flex;
+/*overflow-y: hidden;*/
+background: #fff;
+height: /*900px*/1800px;
+border: 0px solid red;
+margin: 0;
+}
+
+#sky {
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+position: fixed;
+z-index: -99;
+background-image: 
+url(../img/jokubo_b_medziai.png),
+linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-image: 
+url(../img/jokubo_b_medziai.png),
+-webkit-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-image:  
+url(../img/jokubo_b_medziai.png),
+-moz-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-image: 
+url(../img/jokubo_b_medziai.png),
+-o-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-image: 
+url(../img/jokubo_b_medziai.png),
+-ms-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-position: center 8%, 0% 0%;
+background-repeat: no-repeat;
+background-size: auto, 100% 100%;
+background-attachment: fixed;
+opacity: 0;
+}
+
+#container {
+  /*left: calc(50% - 620px);
+  left: calc(50% - 540px);*/
+  position: fixed;
+  border: 0px solid black;
+  width: 100%;
+  height: 100%;
+  max-width: 1500px;
+  min-width: 600px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  perspective: 1000px;
+  margin: 5px auto 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#sky .clouds {
+  position: absolute;
+  right: 0;
+  bottom: 85vh;
+  left: 0;
+  opacity: 0.5;
+}
+#sky .clouds div {
+  position: relative;
+  left: -60%;
+  width: 220px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  background-image: radial-gradient(ellipse at 50%, transparent, #fcfcfc, #f7f7f7);
+  filter: blur(3px);
+  animation: clouds 120s linear infinite, cloud 80s linear infinite;
+}
+#sky .clouds div::before, 
+#sky .clouds div::after {
+  position: absolute;
+  content: "";
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  background-image: radial-gradient(ellipse at 50%, transparent, #f2f2f2, #f7f7f7);
+  filter: blur(3px);
+  animation: cloud 30s linear infinite;
+}
+#sky .clouds div::after {
+  background-color: #e6e6e6;
+}
+#sky .clouds div:nth-child(2), 
+#sky .clouds div:nth-child(4) {
+  animation-delay: 150s;
+}
+#sky .clouds div:nth-child(3) {
+  animation-duration: 140s;
+}
+#sky .clouds div:nth-child(5) {
+  animation-duration: 150s;
+}
+
+@keyframes clouds {
+  0%  {    left: -30%; }
+  20% {    left: 10%;  }
+  40% {    left: 30%;  }
+  60% {    left: 60%;  }
+  100% {   left: 110%; }
+}
+@keyframes cloud {
+  10% {    border-radius: 22% 78% 51% 49% / 78% 66% 34% 22%;  }
+  20% {    border-radius: 70% 60% 36% 25% / 26% 75% 61% 59%;  }
+  30% {    border-radius: 78% 66% 34% 22% / 22% 78% 51% 49%;  }
+  40% {    width: 180px;  }
+  60% {    border-radius: 61% 39% 51% 49% / 50% 66% 34% 50%;  }
+ 100% {    border-radius: 50% 66% 34% 50% / 61% 39% 51% 49%;  }
+}
+.birds {
+  position: absolute;
+  right: -10%;
+  top: 30px;
+  width: 10px;
+  height: 10px;
+  background-color: #070000;
+  clip-path: polygon(70% 59%, 100% 54%, 64% 68%, 48% 83%, 81% 86%, 55% 90%, 0 92%, 19% 76%, 0 60%, 33% 71%);
+  animation: birds 30s linear infinite, fly 0.5s linear infinite;
+  animation-delay: 40s;
+}
+.birds1,
+.birds2,
+.birds3 {
+  position: absolute;
+  left: -20%;
+  top: 30px;
+  width: 6px;
+  height: 6px;
+  background-color: #070000;
+  clip-path: polygon(33% 71%, 0 60%, 19% 76%, 0 92%, 55% 90%, 81% 86%, 48% 83%, 100% 54%, 70% 59%);
+  animation: birds1 50s linear infinite, fly1 0.2s linear infinite;
+}
+.birds2 {
+  left: -30%;
+  top: 40px;
+  clip-path: polygon(33% 71%, 0 60%, 19% 76%, 0 92%, 55% 90%, 81% 86%, 48% 83%, 100% 54%, 70% 59%);
+  animation: birds1 40s linear infinite, fly1 0.2s linear infinite;
+  animation-delay: 30s;
+}
+.birds3 {
+  left: -40%;
+  top: 35px;
+  clip-path: polygon(33% 71%, 0 60%, 19% 76%, 0 92%, 55% 90%, 81% 86%, 48% 83%, 100% 54%, 70% 59%);
+  animation: birds1 60s linear infinite, fly1 0.2s linear infinite;
+  animation-delay: 20s;
+}
+
+@keyframes birds {
+  100% {
+    right: 110%;
+    transform: scale(1.8) translateY(100px);
+  }
+}
+@keyframes birds1 {
+  100% {
+    left: 120%;
+    transform: scale(1.5) translateY(100px);
+  }
+}
+@keyframes fly {
+  50% {
+    clip-path: polygon(70% 69%, 97% 80%, 70% 76%, 48% 83%, 81% 86%, 55% 90%, 0 92%, 19% 76%, 0 71%, 33% 71%);
+  }
+}
+@keyframes fly1 {
+  50% {
+    clip-path: polygon(33% 71%, 0 71%, 19% 76%, 0 92%, 55% 90%, 81% 86%, 48% 83%, 70% 76%, 97% 80%, 70% 69%);
+  }
+}
+
+.status {
+  /*position: fixed;
+  top: 10px;
+  left: 45%;*/
+  margin: 20px auto;
+  color: #800;
+  text-align: center;
+}
+#demo, #demo1 {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+}
+.text {height: 200%;}
+
+#vytis,
+img {
+  position: fixed;
+  left: 20%;
+  top: 50px;
+  border: 0px solid #B00000;
+  max-width: 60%;
+  transform-origin: bottom center;
+  backface-visibility: hidden;
+  margin: 0 auto 0;
+  transition: all 0.3s ease;
+  /*transform: scale(1.5);*/
+  transform: translateY(5%);
+  z-index: 9;
+  perspective: 1000px; /*550px*/
+}
+#vytis {
+  display: block;
+  width: 60%;
+  height: calc(60%);
+  background: #516312 /*url('../img/VYTIS.gif') 50% 50%*/;
+  border: 0px solid #00a000;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  perspective: 550px;
+  /*transform: translateX(-5%);
+  transform: translateY(5%);*/
+  transform: translateZ(10%);
+  opacity: 0.0;
+  z-index: -1;
+}
+img {
+  transform: translateZ(-1%);
+  opacity: 0.99;
+}
+
+#flag {
+  position: absolute;
+  /*background: url('img/Vycio_veliava.png') 0% 0% no-repeat;
+  background-size: 100% 18%;*/
+  width: 12%;
+  min-height: 400px;
+  margin: 5% 40% 0% 20%;
+  padding-top: 0/*5vw*/;
+  padding-bottom: 0;
+  display: block;
+  text-align: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  border: 0px solid #aaa;
+  border-left: 4px solid #ADB4C9;
+  opacity: 0;
+  z-index: -1;
+}
+#flag_1,
+#flag_5 {
+  position: absolute;
+  /*background-image: linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+  background-image: -webkit-linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+  background-image: -moz-linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+  background-image: -o-linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+  background-image: -ms-linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+  background-repeat: no-repeat;
+  background-size: 100% 11%;*/
+  border-left: 3px solid #777A81;
+  width: 80px;
+  padding-top:  0/*5vw*/;
+  padding-bottom: 0;
+  display: block;
+  opacity: 0;
+  z-index: -1;
+}
+#flag_2,
+#flag_3,
+#flag_4  {
+  position: absolute;
+  border-left: 3px solid #777A81;
+  background-repeat: no-repeat;
+  width: 80px;
+  /*height: 400px;*/
+  padding-top:  0/*5vw*/;
+  padding-bottom: 0;
+  display: block;
+  /*background-size: 100% 11%;*/
+  opacity: 0;
+  z-index: -1;
+}
+/*
+#flag_2 {background: url('../img/vilniaus-vliava_800x750.jpg') 0% 0% no-repeat;background-size: 100% 11%;}
+#flag_3 {background: url('../img/ES_flag.png')   0% 0% no-repeat;background-size: 100% 11%;}
+#flag_4 {background: url('../img/NATO_flag.png') 0% 0% no-repeat;background-size: 100% 11%;}
+*/
+
+#flag_1 {margin: 15% 40% 25% 70%;}
+#flag_2 {margin: 14% 40% 27% 75%;}
+#flag_3 {margin: 13% 40% 29% 80%;}
+#flag_4 {margin: 12% 40% 31% 85%;}
+#flag_5 {margin: 11% 40% 35% 90%;}
+
+#flag .flag {
+  position:relative;
+    width:150px;
+    height:100px;
+    z-index:9;
+}
+#flag_1 .flag,
+#flag_2 .flag,
+#flag_3 .flag,
+#flag_4 .flag,
+#flag_5 .flag {
+  position:relative;
+    width:75px;
+    height:50px;
+    z-index:9;
+}
+#flag .flag-element {
+    -webkit-animation:oscill 1s ease-in-out infinite alternate; 
+    -moz-animation:oscill 1s ease-in-out infinite alternate; 
+    -ms-animation:oscill 1s ease-in-out infinite alternate; 
+    animation:oscill 1s ease-in-out infinite alternate; 
+    background: url('../img/Vycio_veliava.png');
+    background-size: 150px 100%;
+    position:relative;
+    height:100%;
+    width:1px;
+    display:inline-block;
+    box-shadow:0 1px grey, 0 -1px gray;
+}
+#flag_1 .flag-element,
+#flag_2 .flag-element,
+#flag_3 .flag-element,
+#flag_4 .flag-element,
+#flag_5 .flag-element {
+    -webkit-animation:oscill 0.9s ease-in-out infinite alternate; 
+    -moz-animation:oscill 0.9s ease-in-out infinite alternate; 
+    -ms-animation:oscill 0.9s ease-in-out infinite alternate; 
+    animation:oscill 0.9s ease-in-out infinite alternate; 
+    background-size: 150px 100%;
+    position:relative;
+    height:100%;
+    width:0.5px;
+    display:inline-block;
+}
+
+#flag_1 .flag-element,
+#flag_5 .flag-element {
+  background-image: linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+  background-image: -webkit-linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+  background-image: -moz-linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+  background-image: -o-linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+  background-image: -ms-linear-gradient(top, #F5B312, #F5B312 33%, #006742 33%, #006742 66%, #BB262C 66%, #BB262C);
+}
+#flag_2 .flag-element {background-image: url('../img/vilniaus-vliava_800x750.jpg');}
+#flag_3 .flag-element {background-image: url('../img/ES_flag.png');}
+#flag_4 .flag-element {background-image: url('../img/NATO_flag.png');}
+
+.curveUpGround{
+  position:relative;
+  z-index:4;
+  margin-top:-200px;
+}
+.curveUpGround path{
+  fill:#33cc33;
+}
+
+@-webkit-keyframes oscill {0% {top: 5%;} 100% {top: -5%;}}
+@-moz-keyframes oscill 	  {0% {top: 5%;} 100% {top: -5%;}}
+@-ms-keyframes oscill 	  {0% {top: 5%;} 100% {top: -5%;}}
+@keyframes oscill 	  {0% {top: 5%;} 100% {top: -5%;}}
+
+
+
+
+.eile {
+    margin: 0;
+    position: absolute;
+    top:  calc(0% + 10px);
+}
+
+#vytis .eile:nth-child(1)  {left: calc(4% + 15px);} 
+#vytis .eile:nth-child(2)  {left: calc(6% + 15px);}
+#vytis .eile:nth-child(3)  {left: calc(8% + 15px);}
+#vytis .eile:nth-child(4)  {left: calc(10% + 15px);}
+#vytis .eile:nth-child(5)  {left: calc(12% + 15px);}
+#vytis .eile:nth-child(6)  {left: calc(14% + 15px);}
+#vytis .eile:nth-child(7)  {left: calc(16% + 15px);}
+#vytis .eile:nth-child(8)  {left: calc(18% + 15px);}
+#vytis .eile:nth-child(9)  {left: calc(20% + 15px);}
+#vytis .eile:nth-child(10) {left: calc(22% + 15px);}
+#vytis .eile:nth-child(11) {left: calc(24% + 15px);}
+#vytis .eile:nth-child(12) {left: calc(26% + 15px);}
+#vytis .eile:nth-child(13) {left: calc(28% + 15px);}
+#vytis .eile:nth-child(14) {left: calc(30% + 15px);}
+#vytis .eile:nth-child(15) {left: calc(32% + 15px);}
+#vytis .eile:nth-child(16) {left: calc(34% + 15px);}
+#vytis .eile:nth-child(17) {left: calc(36% + 15px);}
+#vytis .eile:nth-child(18) {left: calc(38% + 15px);}
+#vytis .eile:nth-child(19) {left: calc(40% + 15px);}
+#vytis .eile:nth-child(20) {left: calc(42% + 15px);}
+#vytis .eile:nth-child(21) {left: calc(44% + 15px);}
+#vytis .eile:nth-child(22) {left: calc(46% + 15px);}
+#vytis .eile:nth-child(23) {left: calc(48% + 15px);}
+#vytis .eile:nth-child(24) {left: calc(50% + 15px);}
+#vytis .eile:nth-child(25) {left: calc(52% + 15px);}
+#vytis .eile:nth-child(26) {left: calc(54% + 15px);}
+#vytis .eile:nth-child(27) {left: calc(56% + 15px);}
+#vytis .eile:nth-child(28) {left: calc(58% + 15px);}
+#vytis .eile:nth-child(29) {left: calc(60% + 15px);}
+#vytis .eile:nth-child(30) {left: calc(62% + 15px);}
+#vytis .eile:nth-child(31) {left: calc(64% + 15px);}
+#vytis .eile:nth-child(32) {left: calc(66% + 15px);}
+#vytis .eile:nth-child(33) {left: calc(68% + 15px);}
+#vytis .eile:nth-child(34) {left: calc(70% + 15px);}
+#vytis .eile:nth-child(35) {left: calc(72% + 15px);}
+#vytis .eile:nth-child(36) {left: calc(74% + 15px);}
+#vytis .eile:nth-child(37) {left: calc(76% + 15px);}
+#vytis .eile:nth-child(38) {left: calc(78% + 15px);}
+#vytis .eile:nth-child(39) {left: calc(80% + 15px);}
+#vytis .eile:nth-child(40) {left: calc(82% + 15px);}
+#vytis .eile:nth-child(41) {left: calc(84% + 15px);}
+#vytis .eile:nth-child(42) {left: calc(86% + 15px);}
+#vytis .eile:nth-child(43) {left: calc(88% + 15px);}
+#vytis .eile:nth-child(44) {left: calc(90% + 15px);}
+#vytis .eile:nth-child(45) {left: calc(92% + 15px);}
+#vytis .eile:nth-child(46) {left: calc(94% + 15px);}
+
+.gele {
+    margin: -6px -2px 0 0/* 0*/;
+    padding: 0;
+    /*margin: -0.14% 0.32%;*/
+    position: relative;
+    /*top:  calc(0% + 32px);
+    left: calc(50% - 15px);*/
+    border: 0px solid #fff;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  width: 20px;
+  height: 20px;
+  transform: scale(0.7);
+  display: block;
+  /*background: #516312 /*url("../img/red_tulip.png")*/;
+    background-size: 100% 100%;
+}
+.white {/*background:  #516312 /*url("../img/white_tulip.png")*/;
+    background-size: 100% 100%;
+}
+.gele .ziedas,
+.gele .ziedas_red, 
+.gele .ziedas_white {
+  position: relative/*absolute*/;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0/* 0 15px*/;
+    padding: 0;
+    /*width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin: 0/*15px*/;
+    border: 0px solid #000;*/
+    background: rgba(0,256,0,0.05);
+    background-size: 100% 100%;
+}
+
+.ziedas_red   {background: rgba(255,0,0,0.05) url("../img/red_tulip.png") 0% -4%;}
+.ziedas_white {background: rgba(255,255,255,0.05) url("../img/white_tulip.png") 0% -4%;}
+
+.gele .whorl {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  background: #B4B458;
+  background-size: 4px 4px;
+  top: 50%;
+  left: 50%;
+  margin-left: -0.75px;
+  margin-top: -0.75px;
+  box-shadow: 0px 0px 4px gold;
+  z-index: 10;
+}
+.gele .flower:nth-child(1),
+.gele .flower:nth-child(2) {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-top: -5px;
+  margin-left: -5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: 500ms;
+  z-index: 9;
+}
+.gele .flower:nth-child(2) {  z-index: 8;}
+
+.gele .flower:nth-child(1) .petal,
+.gele .flower:nth-child(2) .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -2px;
+  margin-left: -2px;
+  /*border-radius: 120% 5% 120% 0%;*/
+  border-radius: 90% 30% 90% 0%;
+  width: 6px;
+  height: 6px;
+  background: -moz-radial-gradient(0% 100%, circle cover, #000, #bb0000, #bb0000, #FFD700);
+  box-shadow: 0px 0px 2px #000;
+  border-top: 0.25px solid #ff0000;
+  border-right: 0.25px solid #ff0000;
+  border-bottom: 2px solid /*#ff0000*/#BB0000;
+  border-left: 2px solid /*#ff0000*/#BB0000;
+  transform-style: preserve-3d;
+}
+
+.white .flower:nth-child(1) .petal,
+.white .flower:nth-child(2) .petal {
+  background: -moz-radial-gradient(0% 100%, circle cover, #F7D624, #fff, #fff, #E8CED3);
+  box-shadow: 0px 0px 2px #000;
+  border-top: 0.25px solid #fff/*#FFD700*/;
+  border-right: 0.25px solid #fff/*#FFD700*/;
+  border-bottom: 2px solid #fff/*#FFD700*/;
+  border-left: 2px solid #fff/*#FFD700*/;
+}
+
+.gele .flower:nth-child(3)  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -2.5px;
+    margin-left: -2.5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    z-index: 11;
+    transform: rotate(0deg);
+    transition: 500ms;
+    z-index: 10;
+}
+
+.gele .flower:nth-child(1) .petal:nth-child(1):after,
+.gele .flower:nth-child(1) .petal:nth-child(2):after,
+.gele .flower:nth-child(1) .petal:nth-child(3):after,
+.gele .flower:nth-child(2) .petal:nth-child(1):after,
+.gele .flower:nth-child(2) .petal:nth-child(2):after,
+.gele .flower:nth-child(2) .petal:nth-child(3):after  {
+  position: absolute;
+  content: "";
+  top: 250%;
+  left: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 0.8px;
+  height: 0.8px;
+  background: gold;
+  box-shadow: 0 0 2px yellow;
+  opacity: 0;
+}
+
+.gele .flower:nth-child(3) .petal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1.75px;
+    margin-left: -1.75px;
+    border-radius: 80px 50% 80px 0%;
+    width: 1.1px;
+    height: 1.1px;
+    background: #512830;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    z-index: 10;
+}
+
+.gele .flower:nth-child(4) .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1.75px;
+  margin-left: -1.75px;
+  border-radius: 150% 50% 150% 0%;
+  width: 1px;
+  height: 1px;
+  background: #F7D162;
+  border-top: 0.5px solid #FFE595;
+  border-right: 0.5px solid #FFE595;
+    z-index: 11;
+}
+
+.gele .flower:nth-child(1) .petal:nth-child(1) {  transform: rotate(60deg)  translate(8px) rotate(45deg);}
+.gele .flower:nth-child(1) .petal:nth-child(2) {  transform: rotate(180deg) translate(8px) rotate(45deg);}
+.gele .flower:nth-child(1) .petal:nth-child(3) {  transform: rotate(300deg) translate(8px) rotate(45deg);}
+.gele .flower:nth-child(2) .petal:nth-child(1) {  transform: rotate(0deg)   translate(8px) rotate(45deg);}
+.gele .flower:nth-child(2) .petal:nth-child(2) {  transform: rotate(120deg) translate(8px) rotate(45deg);}
+.gele .flower:nth-child(2) .petal:nth-child(3) {  transform: rotate(240deg) translate(8px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(1) {  transform: rotate(60deg)  translate(5px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(2) {  transform: rotate(180deg) translate(5px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(3) {  transform: rotate(300deg) translate(5px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(4) {  transform: rotate(0deg)   translate(5px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(5) {  transform: rotate(120deg) translate(5px) rotate(45deg);}
+.gele .flower:nth-child(3) .petal:nth-child(6) {  transform: rotate(240deg) translate(5px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(1) {  transform: rotate(60deg)  translate(1.5px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(2) {  transform: rotate(180deg) translate(1.5px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(3) {  transform: rotate(300deg) translate(1.5px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(4) {  transform: rotate(0deg)   translate(15px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(5) {  transform: rotate(120deg) translate(15px) rotate(45deg);}
+.gele .flower:nth-child(4) .petal:nth-child(6) {  transform: rotate(240deg) translate(1.5px) rotate(45deg);}
+
+.gele:hover .flower:nth-child(1), .gele:hover .flower:nth-child(2) {  transform: scale(1.1);}
+
+
+@media (min-width: 1300px) {
+  #container {
+    left: calc(50% - 650px);
+  }
+}
+@media (min-width: 1400px) {
+  #container {
+    left: calc(50% - 700px);
+  }
+}
+@media (min-width: 1500px) {
+  #container {
+    left: calc(50% - 750px);
+  }
+}
+@media (min-width: 1600px) {
+  #container {
+    left: calc(50% - 800px);
+  }
+}
