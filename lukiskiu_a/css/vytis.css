@@ -14,26 +14,28 @@ top: 0;
 left: 0;
 position: fixed;
 z-index: -99;
-background-image: 
-url(../img/jokubo_b_medziai.png),
-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
-background-image: 
-url(../img/jokubo_b_medziai.png),
--webkit-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
-background-image:  
-url(../img/jokubo_b_medziai.png),
--moz-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
-background-image: 
-url(../img/jokubo_b_medziai.png),
--o-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
-background-image: 
-url(../img/jokubo_b_medziai.png),
--ms-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
-background-position: center 8%, 0% 0%;
+background-image: linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-image: -webkit-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-image: -moz-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-image: -o-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-image: -ms-linear-gradient(top, #5393DD, #E5F5FC, #fff 44%, #516312 44%, #516312 100%);
+background-position:, 0% 0%;
 background-repeat: no-repeat;
-background-size: auto, 100% 100%;
+background-size: 100% 100%;
 background-attachment: fixed;
 opacity: 0;
+}
+
+.jok {
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+position: fixed;
+z-index: -98;
+background: url(../img/jokubo_b_medziai.png) center 8%  no-repeat;
+background-size: auto;
+background-attachment: fixed;
 }
 
 #container {
@@ -53,65 +55,292 @@ opacity: 0;
   background-size: 100%;
 }
 
-#sky .clouds {
+.clouds div {
+  z-index: 2;
   position: absolute;
-  right: 0;
-  bottom: 85vh;
-  left: 0;
-  opacity: 0.5;
+  top: 0px;
+  width: 300px;
+  height: 200px;
+  background: -webkit-linear-gradient(white 50%, grey);
+  background: -o-linear-gradient(white 50%, grey);
+  background: -moz-linear-gradient(white 50%, grey);
+  background: linear-gradient(white 50%, grey);
+  border-radius: 100%;
+  opacity: 0;
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
+  color: #000;
 }
-#sky .clouds div {
+.clouds div::before,
+.clouds div::after {
   position: relative;
-  left: -60%;
-  width: 220px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  background-image: radial-gradient(ellipse at 50%, transparent, #fcfcfc, #f7f7f7);
-  filter: blur(3px);
-  animation: clouds 120s linear infinite, cloud 80s linear infinite;
+  width: 150px;
+  height: 100px;
+  content: " ";
+  display: block;
+  left: -70px;
+  top: 90px;
+  border-radius: 100%;
+  background: -webkit-linear-gradient(white 50%, grey);
+  background: -o-linear-gradient(white 50%, grey);
+  background: -moz-linear-gradient(white 50%, grey);
+  background: linear-gradient(white 50%, grey);
 }
-#sky .clouds div::before, 
-#sky .clouds div::after {
-  position: absolute;
-  content: "";
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-  background-color: #f2f2f2;
-  background-image: radial-gradient(ellipse at 50%, transparent, #f2f2f2, #f7f7f7);
-  filter: blur(3px);
-  animation: cloud 30s linear infinite;
+.clouds div::after {
+  width: 200px;
+  height: 180px;
+  left: 200px;
+  top: -100px/*-50px*/;
 }
-#sky .clouds div::after {
-  background-color: #e6e6e6;
+.clouds div:nth-child(1) {
+  animation: moving 350s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 350s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 1075px;
+  top: 160px;
+  transform: scale(0.21);
 }
-#sky .clouds div:nth-child(2), 
-#sky .clouds div:nth-child(4) {
-  animation-delay: 150s;
+.clouds div:nth-child(2) {
+  animation: moving 350s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 350s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 1475px;
+  top: 160px;
+  transform: scale(0.21);
 }
-#sky .clouds div:nth-child(3) {
-  animation-duration: 140s;
+.clouds div:nth-child(3) {
+  animation: moving 350s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 350s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: -375px;
+  top: 160px;
+  transform: scale(0.22);
 }
-#sky .clouds div:nth-child(5) {
-  animation-duration: 150s;
+.clouds div:nth-child(4) {
+  animation: moving 350s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 350s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 75px;
+  top: 160px;
+  transform: scale(0.21);
+}
+.clouds div:nth-child(5) {
+  animation: moving 350s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 350s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 475px;
+  top: 160px;
+  transform: scale(0.21);
+}
+.clouds div:nth-child(6) {
+  animation: moving 350s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 350s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 975px;
+  top: 160px;
+  transform: scale(0.22);
 }
 
-@keyframes clouds {
-  0%  {    left: -30%; }
-  20% {    left: 10%;  }
-  40% {    left: 30%;  }
-  60% {    left: 60%;  }
-  100% {   left: 110%; }
+.clouds div:nth-child(7) {
+  animation: moving 330s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 330s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 375px;
+  top: 140px;
+  transform: scale(0.23);
 }
-@keyframes cloud {
-  10% {    border-radius: 22% 78% 51% 49% / 78% 66% 34% 22%;  }
-  20% {    border-radius: 70% 60% 36% 25% / 26% 75% 61% 59%;  }
-  30% {    border-radius: 78% 66% 34% 22% / 22% 78% 51% 49%;  }
-  40% {    width: 180px;  }
-  60% {    border-radius: 61% 39% 51% 49% / 50% 66% 34% 50%;  }
- 100% {    border-radius: 50% 66% 34% 50% / 61% 39% 51% 49%;  }
+.clouds div:nth-child(8) {
+  animation: moving 310s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 310s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 750px;
+  top: 130px;
+  transform: scale(0.267);
 }
+.clouds div:nth-child(9) {
+  animation: moving 280s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 280s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 200px;
+  top: 100px;
+  transform: scale(0.367);
+}
+.clouds div:nth-child(10) {
+  animation: moving 260s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 260s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 225px;
+  top: 75px;
+  transform: scale(0.46);
+}
+.clouds div:nth-child(11) {
+  animation: moving 250s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 250s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 525px;
+  top: 70px;
+  transform: scale(0.46);
+}
+.clouds div:nth-child(12) {
+  animation: moving 240s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 240s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 505px;
+  top: 60px;
+  transform: scale(0.5);
+}
+.clouds div:nth-child(13) {
+  animation: moving 240s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 240s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 275px;
+  top: 40px;
+  transform: scale(0.5);
+}
+.clouds div:nth-child(14) {
+  animation: moving 230s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 230s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 675px;
+  top: 30px;
+  transform: scale(0.53);
+}
+
+.clouds div:nth-child(15) {
+  animation: moving 230s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 230s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 125px;
+  top: 30px;
+  transform: scale(0.53);
+}
+.clouds div:nth-child(16) {
+  animation: moving 230s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 230s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 150px;
+  top: 30px;
+  transform: scale(0.53);
+}
+
+.clouds div:nth-child(17) {
+  animation: moving 200s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 200s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 175px;
+  top: 20px;
+  transform: scale(0.633);
+}
+.clouds div:nth-child(18) {
+  animation: moving 180s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 200s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 10px;
+  top: 10px;
+  transform: scale(0.633);
+}
+.clouds div:nth-child(19) {
+  animation: moving 150s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 200s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: -500px;
+  top: 0px;
+  transform: scale(0.633);
+}
+.clouds div:nth-child(20) {
+  animation: moving 150s;
+  animation-iteration-coint: infinite;
+  animation-timing-function: linear;
+  -webkit-animation: moving 200s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  left: 1500px;
+  top: 0px;
+  transform: scale(0.633)/*(calc(-10/300) + 0.7)*/;
+}
+
+@-webkit-keyframes moving {
+  0% {
+    margin-left: 0%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+@keyframes moving {
+  0% {
+    margin-left: 0%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
 .birds {
   position: absolute;
   right: -10%;
