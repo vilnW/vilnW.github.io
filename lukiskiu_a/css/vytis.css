@@ -26,22 +26,13 @@ background-attachment: fixed;
 opacity: 0;
 }
 
-#sky .clouds {
-  position: absolute;
-  right: 0;
-  bottom: 110vh;
-  left: 0;
-  opacity: 0.75;
-  z-index: -98;
-}
-
 .jok {
 width: 100%;
 height: 100%;
 top: 0;
 left: 0;
 position: fixed;
-z-index: -98;
+z-index: -97;
 background: url(../img/jokubo_b_medziai.png) center 8%  no-repeat;
 background-size: auto;
 background-attachment: fixed;
@@ -62,6 +53,15 @@ background-attachment: fixed;
   margin: 5px auto 0;
   background-repeat: no-repeat;
   background-size: 100%;
+}
+
+#sky .clouds {
+  position: absolute;
+  right: 0;
+  bottom: 110vh;
+  left: 0;
+  opacity: 0.75;
+  z-index: -98;
 }
 
 .clouds div {
