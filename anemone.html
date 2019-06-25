@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+html, body {
+  margin: 0;
+  background: #E0FAE0;
+  overflow: hidden;
+}
+
+.mandala {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-top: -1000px;
+  margin-left: -1000px;
+  width: 2000px;
+  height: 2000px;
+   transform: scale(1.2);
+}
+.mandala .whorl {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: #BAC55C;
+  background:
+	linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+	linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+	linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+	linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px, #BAC55C;
+  background-size: 15px 30px;
+  top: 50%;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  box-shadow: 0px 0px 40px gold;
+  z-index: 20;
+   transform: scale(0.5);
+}
+.mandala .flower1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  z-index: 9;
+  /*background: #529052;
+  box-shadow: 0 0 10px #529052;*/
+}
+.mandala .flower1 .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  border-radius: 60% 20% 60% 0%;
+  width: 100px;
+  height: 100px;
+  background: 
+	linear-gradient(-45deg, #CECECE22 0%, #ffffff55 10%, #CECECE22 30%, #ffffff55 50%, #CECECE22 70%, #ffffff55 90%, #CECECE22 100%),
+	linear-gradient(45deg,#E2ECEC 0%, #EBF4F8 30%, #fff 55%,#d5dff0 100%);
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.4), 10px -10px 30px rgba(137,207,138,0.5);
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+}
+.mandala .flower1 .petal:after {
+  position: absolute;
+  content: "";
+  top: 250%;
+  left: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background: gold;
+  box-shadow: 0 0 20px yellow;
+  opacity: 0;
+}
+
+.mandala .flower1 .petal:nth-child(1) {  transform: rotate(-18deg) translate(80px) rotate(45deg);}
+.mandala .flower1 .petal:nth-child(2) {  transform: rotate(54deg)  translate(80px) rotate(45deg);}
+.mandala .flower1 .petal:nth-child(3) {  transform: rotate(126deg) translate(80px) rotate(45deg);}
+.mandala .flower1 .petal:nth-child(4) {  transform: rotate(198deg) translate(80px) rotate(45deg);}
+.mandala .flower1 .petal:nth-child(5) {  transform: rotate(270deg) translate(80px) rotate(45deg);}
+
+.mandala .flower2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -76px;
+  margin-left: -76px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  z-index: 10;
+  transform: rotate(0deg);
+  transition: 500ms;
+}
+.mandala .flower2 .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 700px 50% 700px 0%;
+  width: 30px;
+  height: 30px;
+}
+
+.mandala .flower2 .petal:nth-child(1) {  transform: rotate(18deg)  translate(40px) rotate(45deg);}
+.mandala .flower2 .petal:nth-child(2) {  transform: rotate(90deg)  translate(40px) rotate(45deg);}
+.mandala .flower2 .petal:nth-child(3) {  transform: rotate(162deg) translate(40px) rotate(45deg);}
+.mandala .flower2 .petal:nth-child(4) {  transform: rotate(234deg) translate(40px) rotate(45deg);}
+.mandala .flower2 .petal:nth-child(5) {  transform: rotate(306deg) translate(40px) rotate(45deg);}
+
+.mandala .flower3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -55px;
+  margin-left: -55px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 11;
+  transform: rotate(0deg);
+  transition: 500ms;
+}
+
+.mandala .flower3 .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50% 90% 50% 0%;
+  width: 30px;
+  height: 30px;
+background: -webkit-radial-gradient(bottom left,#FFFFFF,yellow,#FFAE00);
+background: radial-gradient(at bottom left,#FFFFFF,yellow,#FFAE00);
+  border-top: 3px dotted #E47A04;
+  border-right: 3px dotted #E47A04;
+
+  padding:4px;
+  outline: 3px dotted #E47A04;
+  outline-offset:-10px;
+}
+
+.mandala .flower3 .petal:nth-child(1) {  transform: rotate(-18deg) translate(15px) rotate(45deg);}
+.mandala .flower3 .petal:nth-child(2) {  transform: rotate(54deg)  translate(15px) rotate(45deg);}
+.mandala .flower3 .petal:nth-child(3) {  transform: rotate(126deg) translate(15px) rotate(45deg);}
+.mandala .flower3 .petal:nth-child(4) {  transform: rotate(198deg) translate(15px) rotate(45deg);}
+.mandala .flower3 .petal:nth-child(5) {  transform: rotate(270deg) translate(15px) rotate(45deg);}
+
+.mandala .flower4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  z-index: 9;
+  transform: rotate(0deg);
+  transition: 500ms;
+}
+.mandala .flower4 .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 2px;
+  margin-left: 2px;
+  border-radius: 120% 50% 120% 0%;
+  width: 43px;
+  height: 43px;
+  background:
+ 	linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0.05) 43%,rgba(255,255,255,0.3) 45%,rgba(255,255,255,0.3) 55%,rgba(255,255,255,0.05) 57%,rgba(255,255,255,0) 100%),
+ 	linear-gradient(-135deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 30%, rgba(255,255,255,0.3) 70%,rgba(255,255,255,0.6) 100%);
+  transform-style: preserve-3d;
+  border-top: 0px solid white;
+  border-right: 0px solid white;
+}
+
+.mandala .flower4 .petal:nth-child(1) {  transform: rotate(-18deg) translate(55px) rotate(45deg);}
+.mandala .flower4 .petal:nth-child(2) {  transform: rotate(54deg)  translate(55px) rotate(45deg);}
+.mandala .flower4 .petal:nth-child(3) {  transform: rotate(126deg) translate(55px) rotate(45deg);}
+.mandala .flower4 .petal:nth-child(4) {  transform: rotate(198deg) translate(55px) rotate(45deg);}
+.mandala .flower4 .petal:nth-child(5) {  transform: rotate(270deg) translate(55px) rotate(45deg);}
+
+#stem {
+    position: absolute;
+    top: 49%;
+    left: 45%;
+    width: 300px;
+    height: 500px;
+    background-color: transparent;
+    border: solid 6px #a1b965;
+        border-top-color: rgb(161, 185, 101);
+        border-right-color: rgb(161, 185, 101);
+        border-bottom-color: rgb(161, 185, 101);
+        border-left-color: rgb(161, 185, 101);
+    border-color: transparent transparent transparent #a1b965;
+    border-radius: 50%/400px 500px 0 0;
+    transform: rotate(-3deg) scale(1.1, 0.9);
+    z-index: 8;
+}
+
+#stem1 {
+    position: absolute;
+    top: 64%;
+    left: 45%;
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    border: solid 6px #a1b965;
+        border-top-color: rgb(161, 185, 101);
+        border-right-color: rgb(161, 185, 101);
+        border-bottom-color: rgb(161, 185, 101);
+        border-left-color: rgb(161, 185, 101);
+    border-color: #a1b965 transparent transparent #a1b965;
+    border-radius: 50%/200px 50% 0 0;
+    transform: rotate(0deg) scale(1.2, 0.6);
+    z-index: 8;
+}
+
+.leaflet3 {
+  position: absolute;
+  top: 64.15%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  z-index: 9;
+  background: transparent;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+.frag,
+.frag .frag1 {
+  position: absolute;
+  -webkit-transform-origin: 3px 30px;
+          transform-origin: 3px 30px;
+  background-image: linear-gradient(to bottom, #8CAA51 0%, #3E7105 100%);
+  content: "";
+  width: 15px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 8;
+}
+.frag:before, 
+.frag:after {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #3E7105;
+  -webkit-transform-origin: inherit;
+          transform-origin: inherit;
+  z-index: 10;
+
+}
+.frag:before {
+  background-image: linear-gradient(to bottom, #8CAA51 0%, #3E7105 100%);
+  -webkit-transform: translate(-5px, -10px) rotate(10deg);
+          transform: translate(-5px, -10px) rotate(10deg);
+}
+.frag:after {
+  background-image: linear-gradient(to bottom, #8CAA51 0%, #3E7105 100%);
+  -webkit-transform: translate(5px, -5px) rotate(-10deg);
+          transform: translate(5px, -5px) rotate(-10deg);
+}
+
+.frag:nth-of-type(1) {
+  -webkit-transform: translate(300px, 200px) rotate(-90deg);
+          transform: translate(300px, 200px) rotate(-90deg);
+}
+.frag:nth-of-type(2) {
+  -webkit-transform: translate(285px, 179px) rotate(-120deg);
+          transform: translate(285px, 179px) rotate(-120deg);
+}
+.frag:nth-of-type(3) {
+  -webkit-transform: translate(283px, 222px) rotate(-60deg);
+          transform: translate(283px, 222px) rotate(-60deg);
+}
+.frag:nth-of-type(4) {
+  -webkit-transform: translate(255px, 147px) rotate(-160deg);
+          transform: translate(255px, 147px) rotate(-160deg);
+}
+.frag .frag1:nth-of-type(1) {
+  -webkit-transform: translate(-13px, -27px) rotate(25deg);
+          transform: translate(-13px, -27px) rotate(25deg);
+}
+.frag .frag1:nth-of-type(2) {
+  -webkit-transform: translate(10px, -25px) rotate(-25deg);
+          transform: translate(10px, -25px) rotate(-25deg);
+}
+.frag:nth-of-type(5) {
+  -webkit-transform: translate(276px, 243px) rotate(-50deg);
+          transform: translate(276px, 243px) rotate(-50deg);
+}
+.frag:nth-of-type(6) {
+  -webkit-transform: translate(215px, 165px) rotate(-195deg);
+          transform: translate(215px, 165px) rotate(-195deg);
+}
+.frag:nth-of-type(7) {
+  -webkit-transform: translate(229px, 245px) rotate(-15deg);
+          transform: translate(229px, 245px) rotate(-15deg);
+}
+
+.petiole {
+  position: absolute;
+      width: 3px;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 20px solid #8AA84F;
+      z-index: -9;
+  -webkit-transform: translate(3px, -20px);
+          transform: translate(3px, -20px);
+}
+.frag:nth-of-type(4) .petiole,
+.frag:nth-of-type(5) .petiole  {
+  -webkit-transform: translate(0px, -30px);
+          transform: translate(0px, -30px);
+}
+
+.frag:nth-of-type(6) .petiole,
+.frag:nth-of-type(7) .petiole  {
+  -webkit-transform: translate(0px, -10px);
+          transform: translate(0px, -10px);
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="mandala"> 
+  <div id="stem"></div>
+
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+
+  <div class="whorl"></div>
+
+  <div id="stem1"></div>
+  <div class="leaflet3">
+    <div class="frag">
+     <div class="petiole"></div>
+    </div>
+    <div class="frag"></div>
+    <div class="frag"></div>
+    <div class="frag">
+     <div class="frag1"></div>
+     <div class="frag1"></div>
+     <div class="petiole"></div>
+    </div>
+    <div class="frag">
+     <div class="frag1"></div>
+     <div class="frag1"></div>
+     <div class="petiole"></div>
+    </div>
+    <div class="frag">
+     <div class="petiole"></div>
+    </div>
+    <div class="frag">
+     <div class="petiole"></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
