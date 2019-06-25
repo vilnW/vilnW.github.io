@@ -1,0 +1,949 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+html, body {
+  margin: 0;
+  background: #293B1F;
+  overflow: hidden;
+}
+
+.mandala {
+  position: absolute;
+  margin-top: -1000px;
+  margin-left: -1000px;
+  width: 2000px;
+  height: 2000px;
+}
+
+.orange {transform: scale(0.7);}
+.yellow {transform: scale(0.8);}
+.red    {transform: scale(0.65);}
+
+.mandala:nth-child(1) {top: 20%; left: 70%;}
+.mandala:nth-child(2) {top: 45%; left: 75%;}
+.mandala:nth-child(3) {top: 65%; left: 65%;}
+
+.mandala:nth-child(4) {top: 15%; left: 35%;}
+.mandala:nth-child(5) {top: 40%; left: 30%;}
+.mandala:nth-child(6) {top: 65%; left: 35%;}
+
+.mandala:nth-child(7) {top: 20%; left: 55%;}
+.mandala:nth-child(8) {top: 35%; left: 45%;}
+.mandala:nth-child(9) {top: 50%; left: 55%;}
+.mandala:nth-child(10) {top: 70%; left: 50%;}
+
+.mandala:nth-child(11) {top: 45%; left: 50%;transform: scale(0.7); z-index: -8;}
+
+.mandala .whorl {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  background: #1B0907;
+  background-size: 15px 30px;
+  top: 50%;
+  left: 50%;
+  margin-left: -46px;
+  margin-top: -46px;
+  box-shadow: 0px 0px 40px #060100;
+  z-index: 20;
+  transform: scale(0.64);
+  filter: blur(3px);
+}
+.mandala .flower1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  z-index: 9;
+}
+
+.mandala .flower1 .petal {
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -35px;
+  margin-left: -35px;
+  transform: rotate(-45deg) scale(1.5, 1.5);
+  border-radius: 40% 20%;
+}
+
+.mandala .flower1 .petal:before,
+.mandala .flower1 .petal:after {
+  content: "";
+  border-radius: 50%;
+  height: 80px;
+  position: absolute;
+  width: 80px;
+  transform: rotate(45deg) scale(0.8, 1.2);
+}
+
+
+.orange .flower1 .petal {
+  background-color: #FB8200;
+  border-left: 1px solid #FB8500;
+}
+.orange .flower1 .petal:before,
+.orange .flower1 .petal:after {
+  background-color: #FB8200;
+  border: 1px solid #FFF31A;
+  border-bottom: 0px solid #FF8200;
+}
+
+.yellow .flower1 .petal {
+  background-color: #FFDB1A;
+  border-left: 1px solid #FB8500;
+}
+.yellow .flower1 .petal:before,
+.yellow .flower1 .petal:after {
+  background-color: #FFDB1A;
+  border: 1px solid #FFF31A;
+  border-bottom: 0px solid #FF8200;
+}
+
+.red .flower1 .petal {
+  background-color: #D80532;
+  border-left: 1px solid #FB958C;
+  border-top: 1px solid #FB958C;
+}
+.red .flower1 .petal:before,
+.red .flower1 .petal:after {
+  background-color: #AF0D23;
+  border: 1px solid #FB958C;
+  border-bottom: none;
+}
+
+.mandala .flower1 .petal:before {
+  top: -30px;
+  left: 0;
+  border-right: none;
+}
+
+.mandala .flower1 .petal:after {
+  left: 30px;
+  top: 0;
+  border-left: none;
+}
+
+
+.mandala .flower1 .petal:nth-child(1) {  transform: rotate(90deg)   translate(75px) rotate(45deg);}
+.mandala .flower1 .petal:nth-child(2) {  transform: rotate(162deg)  translate(75px) rotate(45deg);}
+.mandala .flower1 .petal:nth-child(3) {  transform: rotate(18deg)   translate(75px) rotate(45deg);}
+.mandala .flower1 .petal:nth-child(4) {  transform: rotate(-126deg) translate(75px) rotate(45deg);}
+.mandala .flower1 .petal:nth-child(5) {  transform: rotate(-54deg)  translate(75px) rotate(45deg);}
+
+.mandala .flower2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: -60px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  z-index: 10;
+  transform: rotate(0deg);
+  transition: 500ms;
+}
+.mandala .flower2 .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: -60px;
+  border-radius: 300px 50% 300px 0%;
+  width: 120px;
+  height: 120px;
+  filter: blur(5px);
+}
+
+.orange .flower2 .petal {
+  background:
+	radial-gradient(at bottom left,#C65A00 10%,#FDA50166,#FB820000),
+ 	linear-gradient(-45deg, #F77E0155 0%,#EA5D0855 10%,#F77E0166 20%,#EA5D0866 30%,#F77E0177 40%,#EA5D0877 50%,#F77E0177 60%,#EA5D0866 70%, #F77E0166 80%,#EA5D0855 90%,#F77E0155 100%),
+ 	linear-gradient(-135deg, #F77E0100 0%,#EA5D0800 30%, rgba(252,142,2,0.1) 70%, #F77E0100 100%);
+  transform-style: preserve-3d;
+  border: 0px solid #E47A04;
+}
+
+.yellow .flower2 .petal {
+  background:
+	radial-gradient(at bottom left,#E6CD35 10%,#FFF50A66,#FB820000),
+ 	linear-gradient(-45deg, #FFF50A55 0%,#E6CD3566 10%,#FFF50A66 20%,#E6CD3577 30%,#FFF50A77 40%,#E6CD3577 50%,#FFF50A66 60%, #E6CD3566 70%,#FFF50A55 80%,#E6CD3555 90%, #FFF50A55 100%),
+ 	linear-gradient(-135deg, #F77E0100 0%,#EA5D0800 30%, rgba(252,142,2,0.1) 70%, #F77E0100 100%);
+  transform-style: preserve-3d;
+  border: 0px solid #E47A04;
+}
+
+.red .flower2 .petal {
+  background:
+	radial-gradient(at bottom left,#801318 10%,#C4202666,#FB820000),
+ 	linear-gradient(-45deg, #C4202633 0%,#80131855 10%,#C4202666 20%,#80131877 30%,#C4202677 40%,#80131877 50%,#C4202677 60%, #80131877 70%,#C4202666 80%,#80131855 90%, #C4202633 100%),
+ 	linear-gradient(-135deg, #F77E0100 0%,#EA5D0800 30%, rgba(252,142,2,0.1) 70%, #F77E0100 100%);
+  transform-style: preserve-3d;
+  border: 0px solid #E47A04;
+}
+
+
+.mandala .flower2 .petal:nth-child(1) {  transform: rotate(22deg)  translate(50px) rotate(45deg);}
+.mandala .flower2 .petal:nth-child(2) {  transform: rotate(94deg)  translate(50px) rotate(45deg);}
+.mandala .flower2 .petal:nth-child(3) {  transform: rotate(166deg) translate(50px) rotate(45deg);}
+.mandala .flower2 .petal:nth-child(4) {  transform: rotate(238deg) translate(50px) rotate(45deg);}
+.mandala .flower2 .petal:nth-child(5) {  transform: rotate(310deg) translate(50px) rotate(45deg);}
+
+.mandala .flower3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -55px;
+  margin-left: -55px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 11;
+  transform: rotate(0deg);
+  transition: 500ms;
+}
+
+.mandala .flower3 .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -23px;
+  margin-left: -23px;
+  border-radius: 50% 90% 50% 0%;
+  width: 50px;
+  height: 50px;
+  outline-offset:-10px;
+}
+
+.orange .flower3 .petal {
+  background: -webkit-radial-gradient(bottom left,#B13E0055,#DF5400,#F07B0155);
+  background: radial-gradient(at bottom left,#B13E0055,#DF5400,#F07B0155);
+}
+.yellow .flower3 .petal {
+  background: -webkit-radial-gradient(bottom left,#FFEA0055,#E6CD35,#F07B0155);
+  background: radial-gradient(at bottom left,#FFEA0055,#E6CD35,#F07B0155);
+}
+.red .flower3 .petal {
+  background: -webkit-radial-gradient(bottom left,#B5242955,#7B1216,#931C1E55);
+  background: radial-gradient(at bottom left,#B5242955,#7B1216,#931C1E55);
+}
+
+.mandala .flower3 .petal:nth-child(1) {  transform: rotate(-18deg) translate(13px) rotate(45deg);}
+.mandala .flower3 .petal:nth-child(2) {  transform: rotate(54deg)  translate(13px) rotate(45deg);}
+.mandala .flower3 .petal:nth-child(3) {  transform: rotate(126deg) translate(13px) rotate(45deg);}
+.mandala .flower3 .petal:nth-child(4) {  transform: rotate(198deg) translate(13px) rotate(45deg);}
+.mandala .flower3 .petal:nth-child(5) {  transform: rotate(270deg) translate(13px) rotate(45deg);}
+
+
+.mandala .flower4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -70px;
+  margin-left: -70px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  z-index: 8;
+  transform: rotate(0deg);
+  transition: 500ms;
+}
+.mandala .flower4 .petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -27px;
+  margin-left: -27px;
+  border-radius: 120% 90% 120% 0%;
+  width: 56px;
+  height: 56px;
+  transform-style: preserve-3d;
+  border-top: 0px solid #EA5D08;
+  border-right: 0px solid #EA5D08;
+}
+
+.orange .flower4 {border: 5px solid #FB8200;}
+.orange .flower4 .petal {background-color: #FB8200;}
+
+.yellow .flower4 {border: 5px solid #FFDB1A;}
+.yellow .flower4 .petal {background-color: #FFDB1A;}
+
+.red .flower4 {border: 5px solid #CD2427;}
+.red .flower4 .petal {background-color: #CD2427;}
+
+.mandala .flower4 .petal:nth-child(1) {  transform: rotate(-18deg) translate(50px) rotate(45deg);}
+.mandala .flower4 .petal:nth-child(2) {  transform: rotate(54deg)  translate(50px) rotate(45deg);}
+.mandala .flower4 .petal:nth-child(3) {  transform: rotate(126deg) translate(50px) rotate(45deg);}
+.mandala .flower4 .petal:nth-child(4) {  transform: rotate(198deg) translate(50px) rotate(45deg);}
+.mandala .flower4 .petal:nth-child(5) {  transform: rotate(270deg) translate(50px) rotate(45deg);}
+
+
+.stem {
+    position: absolute;
+    top: 49%;
+    left: 45%;
+    width: 300px;
+    height: 500px;
+    background-color: transparent;
+    border: solid 6px #647031;
+        border-top-color: rgb(161, 185, 101);
+        border-right-color: rgb(161, 185, 101);
+        border-bottom-color: rgb(161, 185, 101);
+        border-left-color: rgb(161, 185, 101);
+    border-color: transparent transparent transparent #647031;
+    border-radius: 50%/400px 500px 0 0;
+    transform: rotate(-3deg) scale(1.1, 0.9);
+    z-index: 8;
+}
+.l {
+    border-color: transparent #647031 transparent transparent;
+}
+
+
+.stem1 {
+    position: absolute;
+    top: 55%;
+    left: 45%;
+    width: 200px;
+    height: 200px;
+  margin-top: -10px;
+  margin-left: 14px;
+    background-color: transparent;
+    border: solid 6px #647031;
+    border-color: #647031 transparent transparent #647031;
+    border-radius: 50%/200px 50% 0 0;
+    transform: rotate(0deg) scale(1.2, 0.6);
+    z-index: -8;
+}
+
+.yellow .stem1 {
+    transform: translate(20px, 15px) rotate(0deg) scale(0.6, 1.2);
+    border-radius:  20% 50% 0% 50%/200px;
+    border-color:  #647031 #647031 transparent transparent;
+}
+
+.leaflet3 {
+  position: absolute;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 200px;
+  height: 200px;
+  top: 57%;
+  left: 55%;
+  border-radius: 0%;
+  z-index: 8;
+  background: #ffffff00;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.frag,
+.frag .frag1 {
+  position: absolute;
+  -webkit-transform-origin: 3px 30px;
+          transform-origin: 3px 30px;
+  background: transparent;
+  content: "";
+  width: 20px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 8;
+  top: -50%;
+  left: -100%;
+  border: 5px solid #2B612A;
+  
+}
+.frag:before, 
+.frag:after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #3E7105;
+  -webkit-transform-origin: inherit;
+          transform-origin: inherit;
+  z-index: 10;
+  border: 5px solid #2B612A;
+  border-top: none; 
+  border-bottom: none;
+}
+.frag:before {
+  background: transparent;
+  -webkit-transform: translate(-20px, -15px) rotate(20deg);
+          transform: translate(-20px, -15px) rotate(20deg);
+}
+.frag:after {
+  background: transparent;
+  -webkit-transform: translate(5px, -5px) rotate(-20deg);
+          transform: translate(5px, -5px) rotate(-20deg);
+}
+
+.frag:nth-of-type(1) {
+  -webkit-transform: translate(360px, 180px) rotate(-90deg);
+          transform: translate(360px, 180px) rotate(-90deg);
+}
+.frag:nth-of-type(2) {
+  -webkit-transform: translate(335px, 145px) rotate(-120deg);
+          transform: translate(335px, 145px) rotate(-120deg);
+}
+.frag:nth-of-type(3) {
+  -webkit-transform: translate(330px, 210px) rotate(-60deg);
+          transform: translate(330px, 210px) rotate(-60deg);
+}
+.frag:nth-of-type(4) {
+  -webkit-transform: translate(275px, 130px) rotate(-160deg);
+          transform: translate(275px, 130px) rotate(-160deg);
+}
+.frag:nth-of-type(5) {
+  -webkit-transform: translate(280px, 220px) rotate(-35deg);
+          transform: translate(280px, 220px) rotate(-35deg);
+}
+.frag:nth-of-type(6) {
+  -webkit-transform: translate(215px, 130px) rotate(-200deg);
+          transform: translate(215px, 130px) rotate(-200deg);
+}
+.frag:nth-of-type(7) {
+  -webkit-transform: translate(215px, 220px) rotate(10deg);
+          transform: translate(215px, 220px) rotate(10deg);
+}
+
+.leaflet3 .l {border-left: none;  border-top: none; border-bottom: none;}
+.leaflet3 .r {border-right: none; border-top: none; border-bottom: none;}
+
+.leaflet3 .l:before,
+.leaflet3 .l:after {border-left: none;}
+
+.leaflet3 .r:before,
+.leaflet3 .r:after {border-right: none;}
+
+
+.leaf {
+  top: 57%/*68%*/;
+  left: 55%/*60%*/;
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  background: #47743F;
+  background-image:
+	radial-gradient(at bottom left,#485E2E00 10%,#485E2E66,#485E2E00),
+ 	linear-gradient(-45deg, transparent 0%,transparent 49%,#293B1F 50%,transparent 51%, transparent 100%);
+  margin-top: 0px;
+  margin-left: 0px;
+  transform: rotate(-90deg) scale(1.5, 1.5);
+  border-radius: 40% 20%;
+  border: 1px solid #3C7342;
+  z-index: 7;
+    border-radius: 60% 30% 60% 1%;
+}
+
+.leaf:before,
+.leaf:after {
+  content: "";
+  border-radius: 50%;
+  height: 80px;
+  position: absolute;
+  width: 80px;
+  transform: rotate(45deg) scale(0.9, 1.8);
+  background: #47743F;
+  z-index: -9;
+}
+
+.leaf:before {
+  top: -30px;
+  left: 25px;
+  border-left: 1px solid #3C7342;
+  background-image:
+ 	linear-gradient(-90deg, #293B1F 0%,#485E2E33 10%,#485E2E33 70%,#485E2E55 100%);
+}
+
+.leaf:after {
+  left: 70px;
+  top: 15px;
+  border-right: 1px solid #3C7342;
+  background-image:
+ 	linear-gradient(-90deg, #485E2E55 0%, #485E2E33 30%,#485E2E33 90%,#293B1F 100%);
+}
+
+.left .leaf {
+  transform: translate(-200px, 0px) rotate(0deg) scale(1.5, 1.5);
+}
+
+.left .leaflet3 {
+  transform: translate(-180px, 10px) rotate(135deg);
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+
+<div class="mandala orange"> 
+
+  <div class="stem"></div>
+  <div class="stem1"></div>
+  <div class="leaf"></div>
+  <div class="leaflet3">
+    <div class="frag"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+  </div>
+
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="mandala orange"> 
+  <div class="stem"></div>
+
+  <div class="stem1"></div>
+  <div class="leaf"></div>
+  <div class="leaflet3">
+    <div class="frag"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+  </div>
+
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="mandala orange"> 
+  <div class="stem"></div>
+  <div class="stem1"></div>
+  <div class="leaf"></div>
+  <div class="leaflet3">
+    <div class="frag"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+  </div>
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+
+<div class="mandala yellow left"> 
+  <div class="stem l"></div>
+
+  <div class="stem1"></div>
+  <div class="leaf"></div>
+  <div class="leaflet3">
+    <div class="frag"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+  </div>
+
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="mandala yellow left"> 
+  <div class="stem l"></div>
+
+  <div class="stem1"></div>
+  <div class="leaf"></div>
+  <div class="leaflet3">
+    <div class="frag"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+  </div>
+
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="mandala yellow left"> 
+  <div class="stem l"></div>
+
+  <div class="stem1"></div>
+  <div class="leaf"></div>
+  <div class="leaflet3">
+    <div class="frag"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+  </div>
+
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+
+<div class="mandala red"> 
+  <div class="stem"></div>
+
+  <div class="stem1"></div>
+  <div class="leaf"></div>
+  <div class="leaflet3">
+    <div class="frag"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+  </div>
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="mandala red"> 
+  <!--div class="stem l"></div-->
+
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="mandala red"> 
+  <div class="stem"></div>
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="mandala red"> 
+  <div class="stem l"></div>
+
+  <div class="stem1"></div>
+  <div class="leaf"></div>
+  <div class="leaflet3">
+    <div class="frag"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+  </div>
+  <div class="flower1">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower2">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower3">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="flower4">
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+    <div class="petal"> </div>
+  </div>
+  <div class="whorl"></div>
+</div>
+
+<div class="mandala left"> 
+  <div class="stem1"></div>
+  <div class="leaf"></div>
+  <div class="leaflet3">
+    <div class="frag"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+    <div class="frag l"></div>
+    <div class="frag r"></div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
