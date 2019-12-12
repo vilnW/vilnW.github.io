@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gerbil | Pure CSS Image</title>
+<style>
+  body{
+  background-color: #888;
+}
+
+.box {
+  position: relative;
+  height: 700px;
+  width: 700px;
+  display: block;
+  margin: auto;
+  background: transparent;
+  margin-top: 8%;
+  border: 1px solid #fff;
+}
+.body {
+  position: absolute;
+  background: #BEB2A1;
+  background-image: radial-gradient(circle at 40% 10%, #ECECEC 30%, #86765F);
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  height: 45%;
+  width: 37%;
+  left: 30%;
+  top: 34%;
+  box-shadow: 0px -3px 5px 5px #BAB2A8aa, 1px -1px 22px #33333355;
+}
+.zip {
+    height: 55%;
+    background: #A39075aa;
+    width: 3px;
+    position: absolute;
+    left: 49.5%;
+    top: 35%;
+    border-radius: 50%;
+  box-shadow: 0px -2px 5px #BFB5A8, -2px 1px 5px #A39075, -2px -1px 12px #958671;
+}
+.toes-left,
+.toes-right {
+  position: absolute;
+  height: 9%;
+  width: 12%;
+  top: 39%;
+  left: 33%;
+  border-radius: 30%;
+  background: #B19B97;
+  background-image: 
+linear-gradient(to right, transparent, transparent 70%, #4C2E20), 
+linear-gradient(to bottom, #B19B97  0%, #B19B97 23%, #955D52 24%, #955D52 25%, #B19B97 26%, #B19B97 48%, #955D52 49%, #955D52 50%, #B19B97 51%, #B19B97 73%, #955D52 74%, #955D52 75%, #B19B97 76%, #B19B97 100%);
+  box-shadow: -60px 5px 10px 20px #D2C9BB, -50px 5px 5px 30px #BDAC93, -45px 15px 10px 35px #A39075, -35px 25px 5px 40px rgba(216,211,201,0.3), -30px 30px 10px 45px rgba(169,154,129,0.7);
+-moz-transform: rotate(35deg);
+-webkit-transform: rotate(35deg);
+-o-transform: rotate(35deg);
+-ms-transform: rotate(35deg);
+transform: rotate(35deg);
+}
+.toes-right {
+  background-image: 
+linear-gradient(to left, #B19B9700, #B19B9700 70%, #4C2E20), 
+linear-gradient(to bottom, 
+#B19B97  0%, #B19B97 23%, #955D52 24%, #955D52 25%, #B19B97 26%, #B19B97 48%, #955D52 49%, #955D52 50%, #B19B97 51%, #B19B97 73%, #955D52 74%, #955D52 75%, #B19B97 76%, #B19B97 100%);
+  left: 55%;
+  box-shadow: 60px 5px 10px 20px #CFC8BFbb, 50px 5px 5px 30px #B4A693aa, 45px 15px 10px 35px #A39075, 35px 25px 5px 40px rgba(216,211,201,0.3), 30px 30px 10px 45px rgba(169,154,129,0.7);
+-moz-transform: rotate(-35deg);
+-webkit-transform: rotate(-35deg);
+-o-transform: rotate(-35deg);
+-ms-transform: rotate(-35deg);
+transform: rotate(-35deg);
+}
+.hind_paw-left,
+.hind_paw-right {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 40%;
+  width: 44%;
+  top: 63%;
+  left: -6%;
+  background: #BEB2A1;
+  background: radial-gradient(ellipse at 50% 30%, #E9E7E5 0%, #CAC3B8 34%, #CBBFAE 35%, #796C5A 80%);
+  box-shadow: 0px -10px 5px 5px #A59886, inset 0px 10px 15px 5px #9B8F7D77, inset 0px 20px 15px #AA9D8C77, 0px 5px 5px 3px  #807668;
+  border-radius: 20% 80% 50% 50% / 30% 50% 50% 70%;
+}
+.hind_paw-right {
+  left: 60.5%;
+  border-radius: 80% 20% 50% 50% / 50% 30% 60% 50%;
+}
+
+.hind_paw-toes-left,
+.hind_paw-toes-right {
+  position: absolute;
+  height: 2%;
+  width: 10%;
+  top: 82%;
+  left: 26%;
+  border-radius: 30%;
+  background: #B19B97;
+  background-image: linear-gradient(to bottom, #B19B9700, #B19B9700 60%, #4C2E20), linear-gradient(to right, #B19B97  0%, #B19B97 18%, #955D52 19%, #955D52 20%, #B19B97 21%, #B19B97 38%, #955D52 39%, #955D52 40%, #B19B97 41%, #B19B97 58%, #955D52 59%, #955D52 60%, #B19B97 62%, #B19B97 78%, #955D52 79%, #955D52 80%, #B19B97 81%, #B19B97 100%);
+  box-shadow: 5px -5px 3px 2px #CBC3B9, 16px -12px 3px 1px #D2C9BB, 25px -10px 2px 4px #8A7E6F, 5px -4px 2px 3px #807769, 15px 5px 10px 8px rgba(105,105,93,0.7);
+}
+
+.hind_paw-toes-right {
+  left: 61%;
+  box-shadow: -5px -5px 3px 2px #CBC3B9, -16px -12px 3px 1px #D2C9BB, -25px -10px 2px 4px #8A7E6F, -5px -4px 2px 3px #807769, -15px 5px 10px 8px rgba(105,105,93,0.7);
+}
+
+.head {
+  position: absolute;
+  background: #BEB2A1;
+  background-image: linear-gradient(to bottom, #C0B6AB00 70%, #ECECEC), /*linear-gradient(45deg, #A18F7300 10%, #ECECEC00),*/ radial-gradient(farthest-corner at 10px 10px, #A18F73 0%, #A18F73aa 20%, #ECECEC00 100%), radial-gradient(circle at 10vmin 10vmin, #BCAA8D, #C4C2C7);
+  height: 25%;
+  width: 35%;
+  top: 18%;
+  left: 31%;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 0px 0px 5px 5px #BAB2A8aa, 1px -1px 22px #33333355;
+}
+.chin {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  left: 38%;
+  top: 75%;
+  background-color: #ECECEC;
+  border-radius: 50%;
+  box-shadow: 0px 10px 22px #ECECEC;
+}
+.chin:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  left: 33%;
+  top: 25%;
+  background-color: #87625599;
+  box-shadow: 0px 2px 5px #33333399;
+  border-radius: 50%;
+}
+
+.jowl-left{
+  position: absolute;
+  height: 40%;
+  background: #ececec;
+  width: 40%;
+  top: 55%;
+  left: 10%;
+  border-radius: 50%;
+  box-shadow: inset -2px 8px 5px #BDAF9955;
+}
+.jowl-left:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 60%;
+  background: #BDAC93;
+  width: 60%;
+  top: -1%;
+  right: 5%;
+  border-radius: 50%;
+  box-shadow: 2px 3px 10px #BDAC93, -30px 0px 10px 10px #BDAC93;
+}
+
+.jowl-right{
+  position: absolute;
+  height: 40%;
+  background: #ececec;
+  width: 40%;
+  top: 55%;
+  left:52%;
+  border-radius: 50%;
+  box-shadow: inset -2px 8px 5px #BFB9B455;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.jowl-right:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 60%;
+  background: #BFB5A8;
+  width: 60%;
+  top: -1%;
+  left: 5%;
+  border-radius: 50%;
+  box-shadow: 2px 3px 10px #BFB5A8, 30px 0px 10px 10px #BFB5A8;
+}
+
+.whisker{
+  background: black;
+  height:6px;
+  width: 6px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.one  {  left: 68%;  top: 16%;}
+.two  {  left: 63%;  top: 38%;}
+.three{  left: 45%;  top: 22%;}
+.four {  left: 48%;  top: 55%;}
+.five {  left: 75%;  top: 55%;}
+.six  {  left: 58%;  top: 46%;}
+.seven{  left: 23%;  top: 38%;}
+.eight{  left: 24%;  top: 18%;}
+.nine {  left: 48%;  top: 25%;}
+.ten  {  left: 16%;  top: 53%;}
+
+.lips {
+  position: absolute;
+  height: 18%;
+  background: #ECECEC;
+  width: 30%;
+  top: 73%;
+  left: 36%;
+  border-radius: 50%;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+
+.tongue{
+  height: 95%;
+  background: #D8D1C1;
+  width: 5px;
+  position: absolute;
+  left: 46%;
+  border-radius:50%;
+}
+
+.nose-bridge{
+  position: absolute;
+  height: 50%;
+  width:16%;
+  border-radius: 50%;
+  background: #ececec;
+  box-shadow: 0px 5px 12px #ececec;
+  top: 5%;
+  left: 43%;
+}
+
+.nose-top{
+  position: absolute;
+  height: 30%;
+  width: 20%;
+  background: #ececec;
+  box-shadow: 0px 5px 12px #ececec, 5px 0px 12px #ececec;
+  border-radius: 10%;
+  left: 40.5%;
+  top: 8%;
+-moz-transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+.nose-line{
+  background: #C1B8AC;
+  box-shadow: 0px 5px 10px #C1B8AC;
+  height: 70%;
+  width: 2px;
+  position: absolute;
+  left: 48%;
+  top: 10%;
+  border-radius: 50%;
+-moz-transform: rotate(-45deg);
+-webkit-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+
+.nose-tip{
+  position: absolute;
+  background: #A86359;
+  top: 63%;
+  left: 43%;
+  height: 10%;
+  width: 15%;
+  /*border-bottom-left-radius: 135px;*/
+  border-radius: 30%/*50%*/;
+  box-shadow: inset 3px 5px 10px #EAAFA7;
+  transform: perspective(-10px) rotateX(10deg);
+}
+.nose-tip:before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 64%;
+  height: 80%;
+  left: 20%;
+  top: 50%;
+  background-color: #9D615E;
+  border-radius: 50%;
+}
+
+.nose-hole-left {
+  background:#9D615E;
+  height: 8px;
+  width: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  box-shadow: 2px 2px 10px white;
+}
+
+.nose-hole-right {
+  background:#9D615E;
+  height: 8px;
+  width: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  box-shadow: 2px 2px 10px white;
+}
+
+.eye {
+  position: absolute;
+  height: 20%;
+  width: 20%;
+  background: #a9a9a9;
+  border-radius: 50%;
+  top: 22%;
+}
+
+.left {
+  left: 12%;
+}
+
+.right{
+  left: 68%;
+}
+
+.pupil-left{
+  background: #4d4d4d;
+  position: absolute;
+  top: 23%;
+  left: 11%;
+  height: 18%;
+  width: 18%;
+  border-radius: 50%;
+}
+
+.pupil-right{
+  background: #4d4d4d;
+  position: absolute;
+  top: 23%;
+  left: 72%;
+  height: 18%;
+  width: 18%;
+  border-radius: 50%;
+}
+
+.cornea-left{
+  background: black;
+  position: absolute;
+  height: 15%;
+  width:15%;
+  top: 25%;
+  left: 15%;
+  border-radius: 50%;
+}
+.cornea-right{
+  background: black;
+  position: absolute;
+  height: 15%;
+  width:15%;
+  top: 25%;
+  left: 70.5%;
+  border-radius: 50%;
+}
+
+.pupil-light-right {
+  background: white;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  box-shadow: -2px -2px 2px #a9a9a9;
+  position: absolute;
+  left: 74%;
+  top: 28%;
+}
+
+.pupil-light-left {
+  background: white;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  box-shadow: -2px -2px 2px #a9a9a9;
+  position: absolute;
+  left: 26%;
+  top: 28%;
+}
+
+.ear-left,
+.ear-right {
+  border: 2px solid #E4E2D7;
+  box-shadow: inset 0px 0px 10px 10px #E4E2D7aa, 0px 0px 5px 5px #BAB2A8aa;
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  position: absolute;
+  height: 14%;
+  width: 10%;
+  background: #A99578;
+  top: 15%;
+  left:30%;
+-moz-transform: rotate(-35deg);
+-webkit-transform: rotate(-35deg);
+-o-transform: rotate(-35deg);
+-ms-transform: rotate(-35deg);
+transform: rotate(-35deg);
+}
+.ear-right{
+  left:57%;
+-moz-transform: rotate(35deg);
+-webkit-transform: rotate(35deg);
+-o-transform: rotate(35deg);
+-ms-transform: rotate(35deg);
+transform: rotate(35deg);
+}
+
+.ear-left-inner,
+.ear-right-inner{
+  border: 1px solid #E4E2D7;
+  position: absolute;
+  height: 10%;
+  width: 6%;
+  background: #ECECEB;
+  background-image: linear-gradient(to bottom, #DFDEDA 10%, #EDCEBA);
+  top: 17%;
+  left: 30.5%;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+  box-shadow: 0px 0px 3px 3px #E4E2D7, inset -2px -2px 2px #E4E2D7, inset -5px -5px 10px #A99880;
+}
+.ear-right-inner{
+  left:60.5%;
+  transform: rotate(35deg);
+  box-shadow: 0px 0px 3px 3px #E4E2D7, inset 2px -2px 2px #E4E2D7, inset 5px -5px 10px #A99880;
+}
+
+.whiskers {
+ content: '';
+  display: block;
+  position: absolute;
+    width: 97%;
+    height: 30%;
+    position: absolute;
+    left: 0px;
+    top: 20%;
+  background: transparent;
+  border: 0px solid #999;
+}
+
+.whiskers .whiskers-left, 
+.whiskers .whiskers-right {
+  position: absolute;
+  width: 46%;
+  height: 100%;
+  background: transparent;
+  border: 0px solid #99a;
+  margin: 0 1% 0 4%;
+}
+.whiskers .whiskers-left .whisker, 
+.whiskers .whiskers-right .whisker {
+ content: '';
+  display: block;
+  position: absolute;
+  width: 93%;
+  height: 30%;
+  border: 0px solid #f99;
+  border-top: solid 0.5px #ECECEC;
+  background: transparent;
+}
+.whiskers .whiskers-left .whisker {
+  border-radius: 50% 20%;
+}
+.whiskers .whiskers-left .whisker:nth-of-type(1) {
+  top: 25%;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+.whiskers .whiskers-left .whisker:nth-of-type(2) {
+  top: 35%;
+  -webkit-transform: translateX(-10px) rotate(5deg);
+  -moz-transform: translateX(-10px) rotate(5deg);
+  transform: translateX(-10px) rotate(5deg);
+}
+.whiskers .whiskers-left .whisker:nth-of-type(3) {
+  width: 80%;
+  top: 53%;
+  -webkit-transform: translateX(10px) rotate(-8deg);
+  -moz-transform: translateX(10px) rotate(-8deg);
+  transform: translateX(10px) rotate(-8deg);
+}
+
+.whiskers .whiskers-left .whisker:nth-of-type(4) {
+  width: 90%;
+  top: 25%;
+  -webkit-transform:  translateY(15px) rotate(5deg);
+  -moz-transform:  translateY(15px) rotate(5deg);
+  transform:  translateY(15px) rotate(5deg);
+}
+.whiskers .whiskers-left .whisker:nth-of-type(5) {
+  width: 90%;
+  top: 35%;
+  -webkit-transform:  translateY(15px) translateX(-10px) rotate(0deg);
+  -moz-transform:  translateY(15px) translateX(-10px) rotate(0deg);
+  transform:  translateY(15px) translateX(-10px) rotate(0deg);
+}
+.whiskers .whiskers-left .whisker:nth-of-type(6) {
+  width: 80%;
+  top: 55%;
+  -webkit-transform:  translateY(15px) translateX(10px) rotate(-12deg);
+  -moz-transform:  translateY(15px) translateX(10px) rotate(-12deg);
+  transform:  translateY(15px) translateX(10px) rotate(-12deg);
+}
+
+.whiskers .whiskers-left .whisker:nth-of-type(7) {
+  width: 70%;
+  top: 25%;
+  -webkit-transform:  translateY(-20px) translateX(60px) rotate(20deg);
+  -moz-transform:  translateY(-20px) translateX(60px) rotate(20deg);
+  transform:  translateY(-20px) translateX(60px) rotate(20deg);
+}
+.whiskers .whiskers-left .whisker:nth-of-type(8) {
+  width: 70%;
+  top: 35%;
+  -webkit-transform:  translateY(-55px) translateX(75px) rotate(30deg);
+  -moz-transform:  translateY(-55px) translateX(75px) rotate(30deg);
+  transform:  translateY(-55px) translateX(75px) rotate(30deg);
+}
+.whiskers .whiskers-left .whisker:nth-of-type(9) {
+  width: 70%;
+  top: 55%;
+  -webkit-transform:  translateY(-115px) translateX(80px) rotate(40deg);
+  -moz-transform:  translateY(-115px) translateX(80px) rotate(40deg);
+  transform:  translateY(-115px) translateX(80px) rotate(40deg);
+}
+
+.whiskers .whiskers-right {
+  left: 50%;
+}
+.whiskers .whiskers-right .whisker {
+  border-radius: 20% 50%;
+}
+
+.whiskers .whiskers-right .whisker:nth-of-type(7) {
+  width: 70%;
+  top: 35%;
+  -webkit-transform:  translateY(-65px) translateX(-10px) rotate(-40deg);
+  -moz-transform:  translateY(-65px) translateX(-10px) rotate(-40deg);
+  transform:  translateY(-65px) translateX(-10px) rotate(-40deg);
+}
+.whiskers .whiskers-right .whisker:nth-of-type(8) {
+  width: 70%;
+  top: 55%;
+  -webkit-transform:  translateY(-85px) translateX(-10px) rotate(-30deg);
+  -moz-transform:  translateY(-85px) translateX(-10px) rotate(-30deg);
+  transform:  translateY(-85px) translateX(-10px) rotate(-30deg);
+}
+.whiskers .whiskers-right .whisker:nth-of-type(9) {
+  width: 75%;
+  top: 55%;
+  -webkit-transform:  translateY(-70px) translateX(5px) rotate(-20deg);
+  -moz-transform:  translateY(-70px) translateX(5px) rotate(-20deg);
+  transform:  translateY(-70px) translateX(5px) rotate(-20deg);
+}
+
+
+.whiskers .whiskers-right .whisker:nth-of-type(1) {
+  top: 25%;
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.whiskers .whiskers-right .whisker:nth-of-type(2) {
+  top: 35%;
+  -webkit-transform: translateX(10px) rotate(5deg);
+  -moz-transform: translateX(10px) rotate(5deg);
+  transform: translateX(10px) rotate(-5deg);
+}
+.whiskers .whiskers-right .whisker:nth-of-type(3) {
+  top: 55%;
+  -webkit-transform: translateX(10px) rotate(8deg);
+  -moz-transform: translateX(10px) rotate(8deg);
+  transform: translateX(10px) rotate(8deg);
+}
+.whiskers .whiskers-right .whisker:nth-of-type(4) {
+  width: 90%;
+  top: 25%;
+  -webkit-transform:  translateY(15px) rotate(-5deg);
+  -moz-transform:  translateY(15px) rotate(-5deg);
+  transform:  translateY(15px) rotate(-5deg);
+}
+.whiskers .whiskers-right .whisker:nth-of-type(5) {
+  width: 90%;
+  top: 35%;
+  -webkit-transform:  translateY(15px) translateX(10px) rotate(0deg);
+  -moz-transform:  translateY(15px) translateX(10px) rotate(0deg);
+  transform:  translateY(15px) translateX(10px) rotate(0deg);
+}
+.whiskers .whiskers-right .whisker:nth-of-type(6) {
+  width: 80%;
+  top: 55%;
+  -webkit-transform:  translateY(15px) translateX(10px) rotate(12deg);
+  -moz-transform:  translateY(15px) translateX(10px) rotate(12deg);
+  transform:  translateY(15px) translateX(10px) rotate(12deg);
+}
+
+
+
+.tail {
+  position: absolute;
+  background: transparent;
+  border-radius: 50%;
+  border: 10px solid #8B7F6E;
+  height: 20%;
+  width: 85%;
+  left: 6%;
+  top: 75%;
+  box-shadow: 0px -3px 3px 3px #BAB2A8, 0px -4px 5px 5px #BAB2A8, 1px 5px 10px 5px #555, inset 0px -3px 5px 5px rgba(105,105,93,0.7);
+}
+.curtain {
+  position: absolute;
+  background: #888888;
+  height: 26.5%;
+  width: 67%;
+  left: 31%;
+  top: 73.3%;
+}
+.tip-tail {
+  position: absolute;
+  background: #8B7F6E;
+  background-image: linear-gradient(to bottom,  #ECECEC, #C0B6AB 40%, #8B7F6E);
+  border-radius: 50%;
+  border: 0px solid #8B7F6E;
+  height: 4%;
+  width: 25%;
+  left: 8%;
+  top: 91.9%;
+  box-shadow: 0px -5px 10px 10px #BAB2A8, 0px -4px 2px 2px #E4E2E1, 1px -6px 2px 2px #8B7F6E, 1px 3px 5px 5px #5D584D;
+  -webkit-transform: rotate(20deg);
+  -moz-transform:  rotate(20deg);
+  transform:  rotate(20deg);
+}
+.shadow {
+  position: absolute;
+  background:  rgba(105,105,93,0.7);
+  border-radius: 50%;
+  height: 2%;
+  width: 45%;
+  left: 25%;
+  top: 80%;
+  box-shadow: 1px 3px 15px 15px rgba(105,105,93,0.7);
+
+
+}
+
+</style>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<body>
+<div class="box">
+
+ <div class="tail"></div>
+ <div class="curtain"></div>
+ <div class="tip-tail"></div>
+ <div class="shadow"></div>
+ <div class="hind_paw-toes-left"></div>
+ <div class="hind_paw-toes-right"></div>
+
+ <div class="body">
+  <div class="zip"></div>
+  <div class="hind_paw-left"></div>
+  <div class="hind_paw-right"></div>
+  <div class="toes-left"></div>
+  <div class="toes-right"></div>
+ </div>
+
+ <div class="ear-left"></div>
+ <div class="ear-right"></div>
+ <div class="ear-left-inner"></div>
+ <div class="ear-right-inner"></div>
+
+ <div class="head">
+  <div class="chin"></div>
+  <div class="lips">
+   <div class="tongue"></div>
+  </div>
+
+  <div class="jowl-left">
+   <div class="whisker six"></div>
+   <div class="whisker seven"></div>
+   <div class="whisker eight"></div>
+   <div class="whisker nine"></div>
+   <div class="whisker ten"></div>
+  </div>
+
+  <div class="jowl-right">
+   <div class="whisker one"></div>
+   <div class="whisker two"></div>
+   <div class="whisker three"></div>
+   <div class="whisker four"></div>
+   <div class="whisker five"></div>
+  </div>
+
+  <div class="nose-bridge"></div>
+  <div class="nose-top">
+   <div class="nose-line"></div>
+  </div>
+  <div class="nose-tip">
+   <div class="nose-hole-left"></div>
+   <div class="nose-hole-right"></div>
+  </div>
+
+  <div class="eye left"></div>
+  <div class="eye right"></div>
+  <div class="pupil-left"></div>
+  <div class="pupil-right"></div>
+
+  <div class="cornea-left"></div>
+  <div class="cornea-right"></div>
+  <div class="pupil-light-left"></div>
+  <div class="pupil-light-right"></div>
+
+ </div>
+ <div class="whiskers">
+    <div class="whiskers-left">
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+
+    </div>
+    <div class="whiskers-right">
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+     <div class="whisker"></div>
+    </div>
+ </div>
+</div>
+</body>
+</body>
+</html>
