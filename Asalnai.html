@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>CSS Magik cube</title>
+  
+<style>
+/* 
+  You can find more of this here
+  https://codepen.io/cdmoro
+  carlosbonadeo@gmail.com
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+
+  background: #000;
+}
+
+.cube {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  transform: rotatey(calc(var(--mouse-x) * 1deg - 50deg))
+    rotatex(calc((var(--mouse-y) * -1deg + 50deg)));
+}
+
+.middle {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+}
+
+.face {
+  width: 500px;
+  height: 500px;
+  background: url("asalnai.JPG");
+  /*background: url("https://lh4.googleusercontent.com/h67Tc_ut8emgfaec-PNI6Ox1IeaC_Q6A2MnaGjWD3hjeWvgJ3WIJh5UWH7tHTI_eX7sNReeL4_-j6N0ZCl1i");*/
+  transform-style: preserve-3d;
+  border: 0px solid #ccc;
+}
+
+.face-center {
+  background-position: center center;
+}
+
+.face-top {
+  background-position: center top;
+  transform: rotateX(-90deg) translateY(-100%);
+  transform-origin: top;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+}
+
+.face-bottom {
+  background-position: center bottom;
+  transform: rotateX(90deg) translatey(100%);
+  transform-origin: bottom;
+  position: absolute;
+}
+
+.face-right {
+  background-position: right center;
+  transform: rotateY(-90deg) translatey(-100%) translatex(100%);
+  transform-origin: right;
+  position: absolute;
+}
+
+.face-left {
+  background-position: left center;
+  transform: rotateY(90deg) translateX(-100%);
+  transform-origin: left;
+  position: absolute;
+}
+
+.face:not(.face-center)::after {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  content: "";
+  background: rgba(5,5,5,0.5);
+  transform: translatez(-1px) scale(1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid #333;
+}
+
+.face.face-top::after,
+.face.face-right::after,
+.face.face-bottom::after,
+.face.face-left::after  {
+  font-family: Arial;
+  font-weight: bold;
+  content: "Asalnai";
+  color: rgba(55,55,55,0.3);
+  font-size: 6rem;
+  text-align: center;
+text-shadow: -2px -2px 2px #fff, 2px 2px 2px #000; color: #9c8468; opacity: 0.3;
+  transform: translatez(-1px) scale(1) rotatex(180deg);
+}
+.face.face-bottom::after {
+  transform: translatez(-1px) scale(1) rotatex(180deg);
+}
+.face.face-right::after {
+  transform: translatez(-1px) scale(-1, 1) rotatex(0deg);
+}
+.face.face-left::after {
+  transform: translatez(-1px) scale(-1, 1) rotatex(0deg);
+}
+</style>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+ <div class="cube">
+  <div class="face face-top"></div>
+  <div class="middle">
+    <div class="face face-left"></div>
+    <div class="face face-center"></div>
+    <div class="face face-right"></div>
+  </div>
+  <div class="face face-bottom"></div>
+ </div>
+  
+<script id="rendered-js" >
+window.addEventListener(
+"mousemove",
+e => {
+  document.body.style.setProperty(
+  "--mouse-x",
+  e.clientX / document.body.offsetWidth * 100);
+
+  document.body.style.setProperty(
+  "--mouse-y",
+  e.clientY / document.body.offsetHeight * 100);
+
+},
+false);
+//# sourceURL=pen.js
+</script>
+
+
+</body>
+</html>
+ 

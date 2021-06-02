@@ -1,0 +1,990 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Alfa-spider</title>
+  
+<style>
+body {
+  background-color: #ED686B;
+  display: block;
+  margin: 0px;}
+
+.background{
+  background-color: #ED686B;
+  width: 1000px;
+  margin: auto;
+  height: 770px;
+}
+.group{
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+  transform: translate(400px,150px);
+}
+
+.car-body{
+  width: 750px;
+  height: 348px;
+  border-radius: 500px;
+  background-color: #247cff/*#EC3E41*/;
+  top: 136px;
+  right: 25px;
+  position: absolute;
+  z-index: 2;
+  border: 10px solid rgb(34, 31, 31);
+  box-shadow: 9px 0px 6px 0px #eeeeeee3 inset, 9px -16px 5px 7px #201f1f59 inset;
+}
+
+.front-glass{
+  position: absolute;
+  top: -37px;
+  right: 210px;
+  width: 387px;
+  height: 164px;
+  background: #ffffff54;
+  transform: perspective(10px) rotateX(1deg);
+  border: 12px solid #232326;
+  border-radius: 20px;
+}
+.front-glass::before{
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: 0px;
+  width: 374px;
+  height: 158px;
+  /* background: #ffffff54; */
+  transform: perspective(11px) rotateX(0deg);
+  border: 8px solid #fefeff;
+  border-radius: 50px;
+  border-radius: 11px;
+}
+.front-glass::after{
+  content: '';
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 363px;
+  height: 158px;
+  background: #ffffff54;
+  transform: perspective(11px) rotateX(0deg);
+  border: 10px solid #232326;
+  border-radius: 12px;
+}
+
+.mirror1{
+  width: 8px;
+    height: 30px;
+    background-color: #040404;
+    position: absolute;
+    top: -11px;
+    right: 398px;
+    border-radius: 5px;
+}
+.mirror1::before{
+  content: '';
+    width: 3px;
+    height: -3px;
+    /* background-color: #1b1616; */
+    position: absolute;
+    top: -4px;
+    right: -14px;
+    border: 17px solid;
+    border-color: transparent transparent #040404 transparent;
+}
+
+.mirror2{
+  width: 63px;
+  height: 21px;
+  background-color: #0e0d0d;
+  position: absolute;
+  top: 9px;
+  right: 372px;
+  border-radius: 5px;
+}
+
+.mirror2::after{
+  content: '';
+  width: 62px;
+  height: 15px;
+  background-color: #0e0d0d;
+  position: absolute;
+  top: 9px;
+  right: 0px;
+  border-radius: 61%;
+}
+.seat1{
+  position: absolute;
+  width: 200px/*160px*/;
+    height: 145px/*25px*/;
+    border-radius: 40px/*75px*/;
+    background-color: #5c5151/*#1b1616*/;
+    z-index: -1;
+    top: 90px/*115px*/;
+    right: 210px;
+ 
+}
+
+.leash{
+  width: 94px;
+  height: 72px;
+  border: 7px solid #231919;
+  /* background-color: #000; */
+  border-radius: 59%;
+  position: absolute;
+  z-index: 0;
+  top: 85px;
+  right: 258px
+
+}
+
+.seat2{
+  position: absolute;
+    width: 160px;
+    height: 45px/*25px*/;
+    border-radius: 120px/*75px*/;
+    background-color: #5c5151/*#1b1616*/;
+    z-index: 1;
+    top: 120px/*115px*/;
+    right: 434px
+}
+.cover{
+  width: 413px;
+  height: 100px;
+  border-radius: 1px 0px 88px 88px;
+  background-color: #7aafff/*#ff7a7c*/;
+  position: absolute;
+  top: 140px;
+  right: 193px;
+  /* border-bottom: 4px solid #eeeeee87; */
+  z-index: 2;
+  box-shadow: -1px 1px 0px 7px #639ff8/*#f86365*/ inset;
+  border: 5px solid;
+  border-color: #040404 #070606 #eeeeee87 #000000;;
+
+}
+.line{
+  width: 4px;
+  height: 286px;
+  border-radius: 50%;
+  background-color: #fffdfd;
+  position: absolute;
+  top: -86px;
+  left: -661px;
+  transform: rotate(8deg);
+}
+
+.line::after{
+  content: '';
+  width: 18px;
+  height: 27px;
+  border-radius: 19%;
+  background-color: #fffdfd;
+  position: absolute;
+  top: 225px;
+  left: -7px;
+}
+.side-mirror{
+  position: absolute;
+  width: 35px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #faf5f5f5;
+  z-index: 2;
+  top: 111px;
+  right: 123px;
+  z-index: 1;
+  border: 6px solid black;
+}
+.car-lamp1{
+  position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #faf5f5f5;
+    z-index: 2;
+    top: 195px;
+    right: 67px;
+    border: 6px solid black;
+    box-shadow: 0px 10px 0 3px #5756563b inset;
+}
+
+.lamp-frame{
+  position: absolute;
+    width: 113px;
+    height: 113px;
+    border-radius: 50%;
+    /* background-color: #faf5f5f5; */
+    z-index: 2;
+    top: 192px;
+    right: 56px;
+    border: 6px solid black;
+}
+.copy1{
+  position: absolute;
+  z-index: 2;
+  top: 192px;
+  right: 637px;
+}
+.copy2{
+  position: absolute;
+  z-index: 2;
+  top: 192px;
+  right: 627px;
+}
+.box-lamp{
+  position: absolute;
+  background-color: #fdfdfd;
+  width: 283px;
+  height: 85px;
+  border-radius: 100px 10px;
+  border: 5px solid;
+  box-shadow: -1px -13px 0 4px #eee inset;
+  top: 330px;
+  z-index: 3;
+  right: 39px;
+
+}
+.box1{
+  position: absolute;
+  background-color: #373332;
+  width: 243px;
+  height: 44px;
+  border-radius: 29px 10px 20px 3px;
+  top: 24px;
+  border: 2px solid;
+  right: 11px;
+  box-shadow: 0px 8px 0 3px #514c4c9e inset;
+  transform: skew(-26deg);
+}
+.box2{
+  position: absolute;
+  background-color: #eb8f43;
+  width: 116px;
+  height: 34px;
+  border-radius: 28px 5px 16px 4px;
+  top: 30px;
+  border: 2px solid;
+  right: 15px;
+  box-shadow: 0px 8px 1px 0px #5e5e5e66 inset;
+  transform: skew( -28deg)
+}
+.box-lamp2{
+  position: absolute;
+  top: 325px;
+  right: 474px;
+  border-radius:12px 100px;
+
+}
+.copyBox1{
+  border-radius: 10px 10px 4px 52px;
+  right: 26px;
+    top: 20px;
+  transform: skew(26deg) rotate(-180deg);
+}
+
+.copyBox2{
+  border-radius: 2px 41px 0px 10px;
+    right: 152px;
+  box-shadow: 0px 8px #5e5e5e66 inset;
+  top: 26px;
+  transform: skew( 27deg);;
+
+}
+.logo{
+  position: absolute;
+  width: 114px;
+  height: 146px;
+  border-radius: 50px 50px 100px 100px;
+  background-color: #ffffff;
+  z-index: 2;
+  top: 319px;
+  right: 344px;
+  z-index: 3;
+  border: 1px solid;
+  box-shadow: 0px 0px 0 4px #1a15158f
+}
+.logo2{
+  position: absolute;
+  width: 55px;
+  height: 39px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  z-index: 2;
+  top: 302px;
+  right: 374px;
+  z-index: 3;
+  border-top: 5px solid;
+
+}
+.logo-circle{position: absolute;
+  width: 55px;
+  height: 39px;
+  border-radius: 50%;
+  background-color: #382e2e;
+  z-index: 2;
+  top: 322px;
+  right: 375px;
+  z-index: 4;
+  border-top: 1px solid;}
+
+.logo-circle2{position: absolute;
+    width: 40px;
+    height: 40px/*34px*/;
+    border-radius: 50%;
+    background-color: #ffffff;
+    background-image: url("img/Alfa-Romeo-Logo-Badge-1960-1972.png");
+    background-size: 40px 40px;
+    z-index: 2;
+    top: 329px;
+    right: 382px;
+    z-index: 4;
+
+  }
+.logo-line1{position: absolute;
+  width: 99px;
+  height: 30px;
+  border-radius: 21px;
+  background-color: #382e2e;
+  z-index: 2;
+  top: 336px;
+  right: 353px;
+  z-index: 3;
+  border: 1px solid;}
+
+.logo-line2{position: absolute;
+  width: 101px;
+  height: 17px;
+  border-radius: 99px;
+  background-color: #382e2e;
+  z-index: 2;
+  top: 373px;
+  right: 352px;
+  z-index: 3;;
+}
+.logo-line3{
+  position: absolute;
+  width: 97px;
+  height: 14px;
+  border-radius: 99px;
+  background-color: #382e2e;
+  z-index: 2;
+  top: 396px;
+  right: 354px;
+  z-index: 3;
+}
+.logo-line4{
+  position: absolute;
+  width: 83px;
+  height: 16px;
+  border-radius: 99px;
+  background-color: #382e2e;
+  z-index: 2;
+  top: 417px;
+  right: 361px;
+  z-index: 3;
+}
+.logo-line5{
+  position: absolute;
+  width: 63px;
+  height: 16px;
+  border-radius: 0 0 20px 20px;
+  background-color: #382e2e;
+  z-index: 2;
+  top: 440px;
+  right: 371px;
+  z-index: 3;
+}
+
+.shadow-of-box{
+  position: absolute;
+  width: 734px;
+  height: 131px;
+  border-radius: 0px 0px 90px 90px;
+  background-color: #3654c2b8/*#c23639b8*/;
+  z-index: 2;
+  top: 315px;
+  right: 34px;
+  z-index: 2;
+  box-shadow: 0px 12px 0px #2e262636 inset, -1px -11px #2c262659 inset;
+}
+.stent {
+  position: absolute;
+  width: 416px;
+  height: 36px;
+  border-radius: 75px;
+  background-color: #1b1616f5;
+  z-index: 2;
+  top: 482px;
+  right: 198px;
+  z-index: 1
+}
+.Car-wheel1,
+.car-wheel2{
+  position: absolute;
+    width: 108px;
+    height: 163px;
+    border-radius: 45px;
+  background: 
+    linear-gradient(45deg, #282828 25%, transparent 25%) 0 -10px,
+    linear-gradient(135deg, #282828 25%, transparent 25%) 0 -10px,
+    linear-gradient(225deg, #282828 25%, transparent 25%),
+    linear-gradient(-45deg, #282828 25%, transparent 25%);	
+  background-size: 20px 20px;
+  background-color: #332f2ff5;
+    z-index: 1;
+    top: 405px;
+    right: 619px;
+    border: 6px solid #191414;
+    box-shadow: 0px -14px #0003 inset;
+  animation: scroll 250ms linear infinite;
+}
+@keyframes scroll {
+   100%{
+    background-position: 0 10px, 0 10px, 0 20px, 0 20px;
+  }
+}
+.car-wheel2{
+  /*position: absolute;
+  width: 108px;
+  height: 163px;
+  border-radius: 45px;
+  background: 
+    linear-gradient(45deg, #282828 25%, transparent 25%) 0 -10px,
+    linear-gradient(135deg, #282828 25%, transparent 25%) 0 -10px,
+    linear-gradient(225deg, #282828 25%, transparent 25%),
+    linear-gradient(-45deg, #282828 25%, transparent 25%);	
+  background-size: 20px 20px;
+  background-color: #332f2ff5;
+  z-index: 1;
+  top: 405px;
+  border: 6px solid #191414;
+  box-shadow: 0px -14px #0003 inset;*/
+  right: 70px;
+}
+
+.transparent-circle1{
+  position: absolute;
+    width: 750px;
+    height: 600px;
+    border-radius: 50%;
+    background-color: rgba(233, 30, 99, 0.47);
+    top: -72px;
+    right: 36px;
+    z-index: -1;
+}
+.transparent-circle2{
+  position: absolute;
+    width: 438px;
+    height: 310px;
+    border-radius: 50%;
+    background-color: rgb(237 233 234 / 34%);
+    top: 10px;
+    right: 196px;
+    z-index: -1}
+.transparent-circle3{   
+  position: absolute;
+  width: 870px;
+  height: 761px;
+  border-radius: 50%;
+  background-color: rgba(233, 30, 99, 0.32);
+  top: -140px;
+  right: -24px;
+  z-index: -2;}
+.transparent-circle4{
+  width: 759px;
+    position: absolute;
+    height: 44px;
+    background-color: #000000a7;
+    top: 548px;
+    right: 0px;
+    border-radius: 50%;
+}
+.driver {
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    top: -65px;
+    right: 210px;
+    position: absolute;
+    z-index: 0;
+    border: 0px solid red;
+}
+.face {
+  margin: 40px auto 0 auto;
+  position: absolute;
+  width: 120px;
+  height: 135px;
+  top: 50%;
+  margin-top: -70px;
+  left: 50%;
+  margin-left: -60px;
+  background-color: #FBE1B9;
+  border-radius: 35px 35px 80px 80px;
+}
+
+.eye {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 45px;
+  left: 25px;
+  background-color: #345476;
+  border-radius: 30px;
+  box-shadow: 0 0 0 10px #F6F8F3;
+}
+.eye:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  animation: eyeReflectAnimation 0.8s ease-in-out infinite alternate;
+}
+.eye:after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -7px;
+  width: 30px;
+  height: 5px;
+  box-shadow: 2px -3px 0 2px #F5CE99;
+  border-radius: 60px;
+  transform: rotateZ(-10deg);
+  animation: eyebrow1Animation 2.8s ease-in-out infinite alternate;
+}
+.eye + .eye {
+  left: 80px;
+}
+.eye + .eye:after {
+  box-shadow: -2px -3px 0 2px #F5CE99;
+  transform: rotateZ(10deg);
+  animation: eyebrow2Animation 2.8s ease-in-out infinite alternate;
+}
+
+.nose {
+  position: absolute;
+  width: 15px;
+  height: 45px;
+  top: 50px;
+  left: 53px;
+  background-color: #FBCCA9;
+  border-radius: 20px;
+}
+.nose:before {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 10px;
+  top: 31px;
+  left: -4px;
+  border-radius: 20px;
+  background-color: #FBCCA9;
+}
+
+.mouth {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  top: 100px;
+  left: 40px;
+  border-radius: 20px;
+  background-color: #345476;
+  animation: mouthAnimation 2.8s ease-in-out infinite alternate;
+  overflow: hidden;
+}
+
+.teeth {
+  position: absolute;
+  top: -10px;
+  left: 2px;
+  width: 9px;
+  height: 9px;
+  box-shadow: 0px 4px 0px 2px #fff, 9px 4px 0px 2px #fff, 18px 4px 0px 2px #fff, 27px 4px 0px 2px #fff;
+  border-radius: 20px;
+  animation: teethAnimation 2.8s ease-in-out infinite alternate;
+}
+.teeth:before {
+  content: "";
+  position: absolute;
+  top: 31px;
+  left: 2px;
+  width: 9px;
+  height: 9px;
+  box-shadow: 0px -4px 0px 2px #fff, 9px -4px 0px 2px #fff, 18px -4px 0px 2px #fff, 27px -4px 0px 2px #fff;
+  border-radius: 20px;
+  animation: teethBeforeAnimation 2.8s ease-in-out infinite alternate;
+}
+
+.tongue {
+  position: absolute;
+  top: 112px;
+  left: 45px;
+  width: 30px;
+  height: 20px;
+  background-color: #E94A65;
+  border-radius: 5px 5px 30px 30px;
+  animation: tongueAnimation1 2.8s ease-in-out infinite alternate;
+}
+.tongue:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 13px;
+  width: 4px;
+  height: 12px;
+  background-color: #BB4C6A;
+  border-radius: 5px 5px 30px 30px;
+  animation: tongueAnimation2 2.8s ease-in-out infinite alternate;
+}
+
+.ear {
+  position: absolute;
+  top: 37px;
+  left: -18px;
+  width: 18px;
+  height: 40px;
+  background-color: #FBCFAD;
+  border-radius: 30px 0px 0px 30px;
+}
+.ear:before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 5px;
+  height: 15px;
+  border-radius: 4px;
+  background-color: #F5C0A3;
+  transform: rotateZ(-45deg);
+}
+.ear:after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 9px;
+  width: 5px;
+  height: 15px;
+  border-radius: 4px;
+  background-color: #F5C0A3;
+  transform: rotateZ(45deg);
+}
+.ear + .ear {
+  left: 120px;
+  border-radius: 0px 30px 30px 0px;
+}
+.ear + .ear:before {
+  transform: rotateZ(45deg);
+  left: 4px;
+}
+.ear + .ear:after {
+  transform: rotateZ(-45deg);
+  left: 4px;
+}
+
+/* Left hairs */
+.hairs {
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  width: 16px;
+  height: 30px;
+  background-color: #F5CE99;
+  border-radius: 30px 10px 30px 10px;
+  /* Right hairs */
+}
+.hairs:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 4px;
+  height: 28px;
+  background-color: #F5CE99;
+  border-radius: 0px 0px 10px 0px;
+}
+.hairs:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  width: 4px;
+  height: 48px;
+  background-color: #F5CE99;
+  border-radius: 0px 0px 0px 20px;
+}
+.hairs div {
+  position: absolute;
+  top: 0px;
+  left: 113px;
+  width: 16px;
+  height: 30px;
+  background-color: #F5CE99;
+  border-radius: 10px 30px 10px 30px;
+  /* Top hairs */
+}
+.hairs div:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 4px;
+  height: 28px;
+  background-color: #F5CE99;
+  border-radius: 0px 0px 0px 10px;
+}
+.hairs div:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 4px;
+  height: 48px;
+  background-color: #F5CE99;
+  border-radius: 0px 0px 20px 0px;
+}
+.hairs div + div {
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  width: 110px;
+  height: 30px;
+  background-color: #F5CE99;
+  border-radius: 10px 30px 10px 30px;
+}
+.hairs div + div:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -2px;
+  width: 30px;
+  height: 50px;
+  background-color: #F5CE99;
+  border-radius: 60px 0px 0px 60px;
+  animation: hairsAnimation 1.3s ease-in-out infinite alternate;
+}
+.hairs div + div:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 18px;
+  width: 25px;
+  height: 40px;
+  background-color: #F5CE99;
+  border-radius: 60px 0px 0px 60px;
+  animation: hairsAnimation 1.9s ease-in-out infinite alternate;
+}
+
+.neck {
+  position: absolute;
+  width: 70px;
+  height: 60px;
+  top: 50%;
+  margin-top: 40px;
+  left: 50%;
+  margin-left: -35px;
+  background-color: #FBE1B9;
+  border-radius: 35px 35px 80px 80px;
+}
+.neck:before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 35px;
+  top: 0;
+  left: 0;
+  background-color: #FBCFAD;
+  border-radius: 35px 35px 90px 90px;
+}
+
+@-webkit-keyframes tongueAnimation1 {
+  from {    height: 0px;    opacity: 0;  }
+  to   {    height: 20px;    opacity: 1;  }
+}
+@keyframes tongueAnimation1 {
+  from {    height: 0px;    opacity: 0;  }
+  to   {    height: 20px;    opacity: 1;  }
+}
+@-webkit-keyframes tongueAnimation2 {
+  from {    height: 0px;    opacity: 0;  }
+  to   {    height: 12px;    opacity: 1;  }
+}
+@keyframes tongueAnimation2 {
+  from {    height: 0px;    opacity: 0;  }
+  to   {    height: 12px;    opacity: 1;  }
+}
+@-webkit-keyframes eyeReflectAnimation {
+  from {    top: -2px;    left: 5px;  }
+  to   {    top: 2px;    left: 7px;  }
+}
+@keyframes eyeReflectAnimation {
+  from {    top: -2px;    left: 5px;  }
+  to   {    top: 2px;    left: 7px;  }
+}
+@-webkit-keyframes mouthAnimation {
+  from {
+    top: 105px;
+    height: 10px;
+    width: 30px;
+    left: 45px;
+  }
+  to {
+    top: 100px;
+    height: 20px;
+    width: 40px;
+    left: 40px;
+  }
+}
+@keyframes mouthAnimation {
+  from {
+    top: 105px;
+    height: 10px;
+    width: 30px;
+    left: 45px;
+  }
+  to {
+    top: 100px;
+    height: 20px;
+    width: 40px;
+    left: 40px;
+  }
+}
+@-webkit-keyframes teethAnimation {
+  from {    top: -12px;    left: -2px;  }
+  to   {    top: -10px;    left: 2px;  }
+}
+@keyframes teethAnimation {
+  from {    top: -12px;    left: -2px;  }
+  to   {    top: -10px;    left: 2px;  }
+}
+@-webkit-keyframes teethBeforeAnimation {
+  from {    top: 26px;    left: -2px;  }
+  to   {    top: 31px;    left: 2px;  }
+}
+@keyframes teethBeforeAnimation {
+  from {    top: 26px;    left: -2px;  }
+  to   {    top: 31px;    left: 2px;  }
+}
+@-webkit-keyframes hairsAnimation {
+  from {    transform: rotateZ(0deg);  }
+  to   {    transform: rotateZ(-15deg);  }
+}
+@keyframes hairsAnimation {
+  from {    transform: rotateZ(0deg);  }
+  to   {    transform: rotateZ(-15deg);  }
+}
+@-webkit-keyframes eyebrow1Animation {
+  from {    transform: rotateZ(-10deg);  }
+  to   {    transform: rotateZ(10deg);  }
+}
+@keyframes eyebrow1Animation {
+  from {    transform: rotateZ(-10deg);  }
+  to   {    transform: rotateZ(10deg);  }
+}
+@-webkit-keyframes eyebrow2Animation {
+  from {    transform: rotateZ(10deg);  }
+  to   {    transform: rotateZ(-10deg);  }
+}
+@keyframes eyebrow2Animation {
+  from {    transform: rotateZ(10deg);  }
+  to   {    transform: rotateZ(-10deg);  }
+}
+
+
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="background">
+      <div class="group">
+        <div class="car-body"></div>
+	<div class="driver">
+
+         <div class="neck"></div>
+         <div class="face">
+          <div class="eye"></div>
+          <div class="eye"></div>
+          <div class="nose"></div>
+          <div class="mouth">
+	   <div class="teeth"></div>
+	  </div>
+          <!--div class="tongue"></div-->
+          <div class="ear"></div>
+          <div class="ear"></div>
+          <div class="hairs"><div>
+         </div>
+         <div></div>
+   </div>
+  </div>
+
+        </div>
+
+        <div class="front-glass"></div>
+        <div class="mirror1"></div>
+        <div class="mirror2"></div>
+        <div class="seat1"></div>
+        <div class="leash"></div>
+        <div class="seat2"></div>
+        <div class="cover"></div>
+        <div class="line"></div>
+        <div class="side-mirror"></div>
+        <div class="car-lamp1"></div>
+        <div class="lamp-frame"></div>
+        <div class="copy1 car-lamp1"></div>
+        <div class="copy2 lamp-frame"></div>
+      <div class="box-lamp">
+          <div class="box1"></div>
+          <div class="box2"></div>
+      </div>
+      <div class="box-lamp2 box-lamp">
+        <div class=" copyBox1 box1"></div>
+        <div class="copyBox2 box2"></div>
+      </div>
+      <div class="logo"></div>
+      <div class="logo2"></div>
+      <div class="logo-circle"></div>
+      <div class="logo-circle2"></div>
+      <div class="logo-line1"></div>
+      <div class="logo-line2"></div>
+      <div class="logo-line3"></div>
+      <div class="logo-line4"></div>
+      <div class="logo-line5"></div>
+      <div class="shadow-of-box"></div>
+      <div class="stent"></div>
+      <div class="Car-wheel1"></div>
+      <div class="car-wheel2"></div>
+      <div class="transparent-circle1"></div>
+      <div class="transparent-circle2"></div>
+      <div class="transparent-circle3"></div>
+      <div class="transparent-circle4"></div>
+    </div>
+    </div>
+  
+</body>
+
+</html>
+ 
